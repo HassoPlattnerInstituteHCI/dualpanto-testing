@@ -20,6 +20,10 @@ class Linkage(unittest.TestCase):
         self.continue_serial_connection_flag = True
         serial_connection_thread = Thread(target=self.handle_serial_connection)
         serial_connection_thread.start()
+
+        # Upper handle
+
+        print("#### Upper Handle ####")
         print("move the upperhandle to the default position [ENTER]")
         input()
         start = self.encoder_pos
@@ -36,6 +40,30 @@ class Linkage(unittest.TestCase):
         self.assertLess(abs(start[1] - end[1]), 500, "start and end position are not aligning")
         self.assertTrue(3500 < abs(start[0] - mid[0]) < 4500, "the left encoder of the upper handle didn't move far enough")
         self.assertTrue(3500 < abs(start[1] - mid[1]) < 4500, "the right encoder of the upper handle didn't move far enough")
+
+        #Lower handle
+
+        print("#### Lower Handle ####")
+        print("move the lower handle to the default position [ENTER]")
+        input()
+        start = self.encoder_pos
+        print("move the lower handle to the leftmost position [ENTER]")
+        input()
+        mid = self.encoder_pos
+        print("move the lower handle to the start position [ENTER]")
+        input()
+        end = self.encoder_pos
+        print(start)
+        print(mid)
+        print(end)
+        self.assertLess(abs(start[2] - end[2]), 500, "start and end position are not aligning")
+        self.assertLess(abs(start[3] - end[3]), 500, "start and end position are not aligning")
+        self.assertTrue(3500 < abs(start[2] - mid[2]) < 4500,
+                        "the left encoder of the upper handle didn't move far enough")
+        self.assertTrue(3500 < abs(start[3] - mid[3]) < 4500,
+                        "the right encoder of the upper handle didn't move far enough")
+
+        # close serial connection
         self.continue_serial_connection_flag = False
 
     def test_encoder(self):
