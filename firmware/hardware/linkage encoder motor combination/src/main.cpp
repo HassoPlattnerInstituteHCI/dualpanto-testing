@@ -196,6 +196,13 @@ void move_to_end(uint16_t pid){
   }
 }
 
+void move_linkage(uint16_t dir1, uint16_t dir2){
+  move_to_end(5);
+  ledcWrite(5, 0.4*PWM_MAX);
+  move_to_end(4);
+  ledcWrite(5, 0);
+}
+
 void align_motors(){
   reset_motors();
   // find zero position
@@ -205,7 +212,7 @@ void align_motors(){
 
   // start
   loop_encoders();
-  send_encoders();
+  //send_encoders();
 
   move_to_end(5);
   ledcWrite(5, 0.4*PWM_MAX);
@@ -229,13 +236,27 @@ void align_motors(){
   loop_encoders();
   send_encoders();
 
+  ledcWrite(5, 0.3*PWM_MAX);
+  ledcWrite(4, 0.3*PWM_MAX);
+  delay(100)
+  ledcWrite(5, 0.3*PWM_MAX);
+  ledcWrite(4, 0.3*PWM_MAX);
+
+  move_to_end(5);
+  ledcWrite(5, 0.4*PWM_MAX);
+  move_to_end(4);
+  ledcWrite(5, 0);
+
+  loop_encoders();
+  send_encoders();
+
   //for (int i = 0; i < 2; i++){ encoder_zero[i] = encoders[i];}
   //lower handle
 
 
   // start
   loop_encoders();
-  send_encoders();
+  //send_encoders();
 
   move_to_end(6);
   ledcWrite(6, 0.4*PWM_MAX);
@@ -258,6 +279,15 @@ void align_motors(){
   // back to start
   loop_encoders();
   send_encoders();
+
+  move_to_end(6);
+  ledcWrite(6, 0.4*PWM_MAX);
+  move_to_end(7);
+  ledcWrite(6, 0);
+
+  loop_encoders();
+  send_encoders();
+
 
 
 

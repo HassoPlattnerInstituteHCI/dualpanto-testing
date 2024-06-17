@@ -113,11 +113,11 @@ class Linkage(unittest.TestCase):
             self.assertTrue(3500 < abs(points[0][1] - points[1][1]) < 4500,
                             "the right encoder of the upper handle didn't move far enough")
 
-            self.assertLess(abs(points[0][2] - points[2][2]), 500, "start and end position are not aligning")
-            self.assertLess(abs(points[0][3] - points[2][3]), 500, "start and end position are not aligning")
-            self.assertTrue(3500 < abs(points[0][2] - points[1][2]) < 4500,
+            self.assertLess(abs(points[3][2] - points[5][2]), 500, "start and end position are not aligning")
+            self.assertLess(abs(points[3][3] - points[5][3]), 500, "start and end position are not aligning")
+            self.assertTrue(3500 < abs(points[3][2] - points[4][2]) < 4500,
                             "the left encoder of the upper handle didn't move far enough")
-            self.assertTrue(3500 < abs(points[0][3] - points[1][3]) < 4500,
+            self.assertTrue(3500 < abs(points[3][3] - points[4][3]) < 4500,
                             "the right encoder of the upper handle didn't move far enough")
 
     def test_sync(self):

@@ -54,7 +54,7 @@ void loop()
     ledcWrite(i, 0);
     ledcWrite(i+4, 0.175*PWM_MAX);
   }
-  delay(30);
+  delay(20);
 
 //  for (int i = 0; i < 2; i++){
 //    digitalWrite(endeffectorDirectionPin[i], 1);
