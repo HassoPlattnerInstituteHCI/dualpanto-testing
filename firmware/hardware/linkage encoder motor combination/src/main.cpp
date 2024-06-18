@@ -197,104 +197,51 @@ void move_to_end(uint16_t pid){
 }
 
 void move_linkage(uint16_t dir1, uint16_t dir2){
-  move_to_end(5);
-  ledcWrite(5, 0.4*PWM_MAX);
-  move_to_end(4);
-  ledcWrite(5, 0);
+
+    loop_encoders();
+    send_encoders();
+
+    // move out
+    ledcWrite(dir1 % 4, 0.2*PWM_MAX);
+    ledcWrite(dir2 % 4, 0.2*PWM_MAX);
+    delay(100);
+    ledcWrite(dir1 % 4, 0);
+    ledcWrite(dir2 % 4, 0);
+    delay(200);
+
+
+    // move to end
+    move_to_end(dir1);
+    ledcWrite(dir1, 0.4*PWM_MAX);
+    move_to_end(dir2);
+    ledcWrite(dir1, 0);
+
+    loop_encoders();
+    send_encoders();
+
+    ledcWrite(dir2, 0.4*PWM_MAX);
+    ledcWrite(dir1, 0.1*PWM_MAX);
+    delay(100);
+    ledcWrite(dir1, 0.3*PWM_MAX);
+    ledcWrite(dir2, 0.3*PWM_MAX);
+    delay(500);
+    ledcWrite(dir1, 0);
+    ledcWrite(dir2, 0);
+
+    // back to start
+    loop_encoders();
+    send_encoders();
+
 }
 
 void align_motors(){
   reset_motors();
-  // find zero position
-  // move shorter handle to max
 
-  // upper handle
+  move_linkage(5, 4);
 
-  // start
-  loop_encoders();
-  //send_encoders();
-
-  move_to_end(5);
-  ledcWrite(5, 0.4*PWM_MAX);
-  move_to_end(4);
-  ledcWrite(5, 0);
-
-  // end
-  loop_encoders();
-  send_encoders();
-
-  ledcWrite(4, 0.4*PWM_MAX);
-  ledcWrite(5, 0.1*PWM_MAX);
-  delay(100);
-  ledcWrite(5, 0.3*PWM_MAX);
-  ledcWrite(4, 0.3*PWM_MAX);
-  delay(1000);
-  ledcWrite(5, 0);
-  ledcWrite(4, 0);
-
-  // back to start
-  loop_encoders();
-  send_encoders();
-
-  ledcWrite(5, 0.3*PWM_MAX);
-  ledcWrite(4, 0.3*PWM_MAX);
-  delay(100)
-  ledcWrite(5, 0.3*PWM_MAX);
-  ledcWrite(4, 0.3*PWM_MAX);
-
-  move_to_end(5);
-  ledcWrite(5, 0.4*PWM_MAX);
-  move_to_end(4);
-  ledcWrite(5, 0);
-
-  loop_encoders();
-  send_encoders();
-
-  //for (int i = 0; i < 2; i++){ encoder_zero[i] = encoders[i];}
   //lower handle
 
-
-  // start
-  loop_encoders();
-  //send_encoders();
-
-  move_to_end(6);
-  ledcWrite(6, 0.4*PWM_MAX);
-  move_to_end(7);
-  ledcWrite(6, 0);
-
-  // end
-  loop_encoders();
-  send_encoders();
-
-  ledcWrite(7, 0.4*PWM_MAX);
-  ledcWrite(6, 0.1*PWM_MAX);
-  delay(100);
-  ledcWrite(6, 0.3*PWM_MAX);
-  ledcWrite(7, 0.3*PWM_MAX);
-  delay(1000);
-  ledcWrite(6, 0);
-  ledcWrite(7, 0);
-
-  // back to start
-  loop_encoders();
-  send_encoders();
-
-  move_to_end(6);
-  ledcWrite(6, 0.4*PWM_MAX);
-  move_to_end(7);
-  ledcWrite(6, 0);
-
-  loop_encoders();
-  send_encoders();
-
-
-
-
-
-//  for (int i = 2; i < 4; i++){ encoder_zero[i] = encoders[i];}
-//  int correction[4] = {3700, -4000, -4000, 3700};
-//  for (int i = 0; i < 4; i++){ encoder_zero[i] -= correction[i];}
+  move_linkage(6, 7);
 }
 
 void setup(){

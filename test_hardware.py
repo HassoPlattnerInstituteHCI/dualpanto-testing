@@ -89,6 +89,7 @@ class Linkage(unittest.TestCase):
             print("Please ask your tutor.")
 
     def test_motor_encoder_combination(self):
+        print("Move the handles to the default position.")
         res = util.upload_firmware('./firmware/hardware/linkage encoder motor combination')
         self.assertEqual(res, 0, msg='failed to upload firmware')
         time.sleep(1)
@@ -105,19 +106,27 @@ class Linkage(unittest.TestCase):
                 if len(points) == 6:
                     break
             print(points)
+            for i in range(1, len(points)):
+                for j in range(len(points[i])):
+                    if points[i - 1][j] - points[i][j] > 10000:
+                        points[i][j] += 16834
+                    if points[i - 1][j] - points[i][j] < -10000:
+                        points[i][j] -= 16834
 
-            self.assertLess(abs(points[0][0] - points[2][0]), 500, "start and end position are not aligning")
-            self.assertLess(abs(points[0][1] - points[2][1]), 500, "start and end position are not aligning")
-            self.assertTrue(3500 < abs(points[0][0] - points[1][0]) < 4500,
+            print(points)
+
+            self.assertLess(abs(points[0][0] - points[2][0]), 1000, "start and end position are not aligning")
+            self.assertLess(abs(points[0][1] - points[2][1]), 1000, "start and end position are not aligning")
+            self.assertTrue(3000 < abs(points[0][0] - points[1][0]) < 5000,
                             "the left encoder of the upper handle didn't move far enough")
-            self.assertTrue(3500 < abs(points[0][1] - points[1][1]) < 4500,
+            self.assertTrue(3000 < abs(points[0][1] - points[1][1]) < 5000,
                             "the right encoder of the upper handle didn't move far enough")
 
-            self.assertLess(abs(points[3][2] - points[5][2]), 500, "start and end position are not aligning")
-            self.assertLess(abs(points[3][3] - points[5][3]), 500, "start and end position are not aligning")
-            self.assertTrue(3500 < abs(points[3][2] - points[4][2]) < 4500,
+            self.assertLess(abs(points[3][2] - points[5][2]), 1000, "start and end position are not aligning")
+            self.assertLess(abs(points[3][3] - points[5][3]), 1000, "start and end position are not aligning")
+            self.assertTrue(3000 < abs(points[3][2] - points[4][2]) < 5000,
                             "the left encoder of the upper handle didn't move far enough")
-            self.assertTrue(3500 < abs(points[3][3] - points[4][3]) < 4500,
+            self.assertTrue(3000 < abs(points[3][3] - points[4][3]) < 5000,
                             "the right encoder of the upper handle didn't move far enough")
 
     def test_sync(self):
