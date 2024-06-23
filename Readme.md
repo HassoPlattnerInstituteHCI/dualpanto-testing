@@ -9,8 +9,11 @@ Please check [BIS.md](BIS.md) first.
 
 ## Requirements
 ### Install the ESP32 driver
-- [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) the latest installer for your OS-Version.
-- Run the installer.
+- [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) the latest installer for your OS-Version
+- Run the installer
+
+### Clone submodules
+run `git submodule init`, then `git submodule update`
 
 ### Setup C++ environment
 
