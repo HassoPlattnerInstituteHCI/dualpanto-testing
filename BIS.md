@@ -94,4 +94,4 @@ From Week9, we will develop dualpanto app. sometimes you want to upload dualpant
     - this is not always happend. but You need to keep this in mind.
     - We haven't known why so. Welcome you to contribute here!
 
-`python -m unittest test_firmware.UploadDualpantoFrameowrk.test_upload_dp_firmware`
+`python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
