@@ -48,6 +48,18 @@ or [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testin
 #### Command Line
 you can also run all unittest from command line interface if struggle with setting up IDE. Install python library in requirements.txt, then execute script.
 
+# Uploading DualpantoFramework
+Sometimes you want to upload dualpanto famework again when...
+
+1. you update dualpanto framework (e.g. you tune PID)
+2. you plug dualpanto device into different PC
+    - we observe dualpanto has some wall rendering issue when you connect dualpanto to other PC. e.g, you uplaod firmware from mac and connect to windows pc.
+    - this is not always happend. but You need to keep this in mind.
+    - We haven't known why so. Welcome you to contribute here!
+
+`python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
+
+
 # Test Flow
 Most of the test is not semi-automated since they are related to haptics and mechanical issue. Check `How to test?`.
 
