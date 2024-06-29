@@ -17,7 +17,7 @@ class Basic(unittest.TestCase):
     def test_upload_firmware(self):
         res = util.upload_firmware('./firmware/hello world')
         self.assertEqual(res, 0, msg='failed to upload firmware. please first check platformIO config and installation')
-
+        return res
 class Haptics(unittest.TestCase):
 
     def test_line_wall(self):

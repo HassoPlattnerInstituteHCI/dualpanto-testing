@@ -13,6 +13,10 @@ class Linkage(unittest.TestCase):
     encoder_pos = [0, 0, 0, 0, 0, 0]
     continue_serial_connection_flag = True
 
+    def test_encoder_jump(self):
+        res = util.upload_firmware('./firmware/hardware/encoder jump')
+        self.assertEqual(res, 0, msg='failed to upload firmware')
+
     def test_mechanical(self):
         res = util.upload_firmware('./firmware/hardware/linkage encoder')
         self.assertEqual(res, 0, msg='failed to upload firmware')
