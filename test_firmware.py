@@ -21,7 +21,7 @@ class Basic(unittest.TestCase):
 class Haptics(unittest.TestCase):
 
     def test_line_wall(self):
-        res = util.upload_firmware("firmware/haptics/line wall/firmware", False)
+        res = util.upload_firmware("firmware/haptics/line wall 2/firmware", False)
         print("")
         print("==========================")
         print("===== TEST LINE WALL =====")

@@ -14,7 +14,7 @@ class Linkage(unittest.TestCase):
     continue_serial_connection_flag = True
 
     def test_encoder_jump(self):
-        res = util.upload_firmware('./firmware/hardware/encoder jump')
+        res = util.upload_firmware('./firmware/hardware/encoder jump median')
         self.assertEqual(res, 0, msg='failed to upload firmware')
 
     def test_mechanical(self):
@@ -28,13 +28,13 @@ class Linkage(unittest.TestCase):
         # Upper handle
 
         print("#### Upper Handle ####")
-        print("move the upperhandle to the default position [ENTER]")
+        print("retract the me-handle to the start position [ENTER]")
         input()
         start = self.encoder_pos
-        print("move the upperhandle to the rightmost position [ENTER]")
+        print("move the me-handle to the rightmost position [ENTER]")
         input()
         mid = self.encoder_pos
-        print("move the upperhandle to the start position [ENTER]")
+        print("move the me-handle to the start position [ENTER]")
         input()
         end = self.encoder_pos
         print(start)
@@ -42,19 +42,19 @@ class Linkage(unittest.TestCase):
         print(end)
         self.assertLess(abs(start[0] - end[0]), 500, "start and end position are not aligning")
         self.assertLess(abs(start[1] - end[1]), 500, "start and end position are not aligning")
-        self.assertTrue(3500 < abs(start[0] - mid[0]) < 4500, "the left encoder of the upper handle didn't move far enough")
-        self.assertTrue(3500 < abs(start[1] - mid[1]) < 4500, "the right encoder of the upper handle didn't move far enough")
+        self.assertTrue(3500 < abs(start[0] - mid[0]) < 4500, "the left encoder of the me-handle didn't move far enough")
+        self.assertTrue(3500 < abs(start[1] - mid[1]) < 4500, "the right encoder of the me-handle didn't move far enough")
 
         #Lower handle
 
         print("#### Lower Handle ####")
-        print("move the lower handle to the default position [ENTER]")
+        print("retract the it-handle to the start position [ENTER]")
         input()
         start = self.encoder_pos
-        print("move the lower handle to the leftmost position [ENTER]")
+        print("move the it-handle to the leftmost position [ENTER]")
         input()
         mid = self.encoder_pos
-        print("move the lower handle to the start position [ENTER]")
+        print("move the it-handle to the start position [ENTER]")
         input()
         end = self.encoder_pos
         print(start)
@@ -63,9 +63,9 @@ class Linkage(unittest.TestCase):
         self.assertLess(abs(start[2] - end[2]), 500, "start and end position are not aligning")
         self.assertLess(abs(start[3] - end[3]), 500, "start and end position are not aligning")
         self.assertTrue(3500 < abs(start[2] - mid[2]) < 4500,
-                        "the left encoder of the upper handle didn't move far enough")
+                        "the left encoder of the it-handle didn't move far enough")
         self.assertTrue(3500 < abs(start[3] - mid[3]) < 4500,
-                        "the right encoder of the upper handle didn't move far enough")
+                        "the right encoder of the it-handle didn't move far enough")
 
         # close serial connection
         self.continue_serial_connection_flag = False

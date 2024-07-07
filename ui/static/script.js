@@ -6,8 +6,9 @@ function test_upload_firmware(){
         console.log(data);
         var console_out = document.getElementById("console_iframe").contentWindow.document.body.innerHTML;
         console_out = console_out.split("-- Dualpanto tester --").at(-1)
-        if (console_out.includes("Failed to connect to ESP32: Timed out waiting for packet header")){
-            alert("Check if you pushed the upload button. ");
+        //if (console_out.includes("Failed to connect to ESP32: Timed out waiting for packet header")){
+        if (console_out.includes("Failed to connect to ESP32: Invalid head of packet")){
+            alert("Push the upload button while uploading the firmware. ");
         }
         if (console_out.includes("Could not configure port")){
             alert("Check if you have connected the USB correctly and that you are not using a charging only cable.");
@@ -25,6 +26,8 @@ function test_upload_firmware(){
 function do_test(button, test_name){
     //const infoBox = document.getElementById('info-box');
     button.innerHTML = "Loading...";
+
+    var result = null;
 
     switch (test_name){
         case "upload_firmware":
