@@ -6,39 +6,46 @@
     <title>Dualpanto Tester</title>
     <link rel="stylesheet" href="static/style.css">
     <script src="static/script.js"></script>
-<body>
-    <header>
-        Dualpanto Tester
-    </header>
+    <body>
     <div class="container">
-        <div class="left">
-            <div class="list-item" onclick="showInfo('upload_firmware')">
-                <div>
-                    <h2>Upload firmware test</h2>
-                    <p>Check if a connection to the panto exists</p>
+         <header>
+            Dualpanto Tester
+        </header>
+        <div class="vertical-container">
+            <div class="horizontal-container">
+                <div class="left">
+                    <div class="list-item" onclick="showInfo('upload_firmware')">
+                        <div>
+                            <h2>Upload firmware test</h2>
+                            <p>Check if a connection to the panto exists</p>
+                        </div>
+                        <button onclick="do_test(this, 'hello_world')">Start Test</button>
+                    </div>
+                    <div class="list-item" onclick="showInfo('Item 2')">
+                        <div>
+                            <h2>Automatic Motor + Encoder</h2>
+                            <p>Automatic motor encoder combination test</p>
+                        </div>
+                        <button onclick="do_test(this, 'encoder_motor_automatic')">Start Test</button>
+                    </div>
+                    <div class="list-item">
+                        <div>
+                            <h2>Linkage Sync</h2>
+                            <p>Sync the handles (mirrored)</p>
+                        </div>
+                        <button onclick="showInfo('Item 3')">More Info</button>
+                    </div>
+
+                    <!-- Add more list items as needed -->
                 </div>
-                <button onclick="do_test(this, 'upload_firmware')">Start Test</button>
-            </div>
-            <div class="list-item" onclick="showInfo('Item 2')">
-                <div>
-                    <h2>Test 2</h2>
-                    <p>Description for test 2</p>
+                <div class="right">
+                    <div class="additional-info" id="info-box">
+                        <h2>Dualpanto Testing Framework</h2>
+                        <p>Start by testing the firmware upload</p>
+                    </div>
                 </div>
-                <button>More Info</button>
             </div>
-            <div class="list-item">
-                <div>
-                    <h2>Test 3</h2>
-                    <p>Description for test 3</p>
-                </div>
-                <button onclick="showInfo('Item 3')">More Info</button>
-            </div>
-            <!-- Add more list items as needed -->
-        </div>
-        <div class="right"3>
-            <div class="additional-info" id="info-box">
-                <h2>Dualpanto Testing Framework</h2>
-                <p>Start by testing the firmware upload</p>
+            <div id="bottom" class="bottom">
             </div>
         </div>
     </div>

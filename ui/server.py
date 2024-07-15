@@ -26,13 +26,21 @@ def index():
     return render_template('index.html')
 
 
-@app.route("/upload_firmware")
-def upload_firmware():
+@app.route("/upload_firmware/<firmware>")
+def upload_firmware(firmware):
     print_console_seperator()
     try:
-        t = test_firmware.Basic()
-        t.test_upload_firmware()
-        yield '{"status": "ok"}'
+        if firmware == "hello_world":
+            t = test_firmware.Basic()
+            t.test_upload_firmware()
+            yield '{"status": "ok"}'
+        if firmware == "encoder_motor_automatic":
+            t = test_hardware.Linkage()
+            t.test_motor_encoder_combination()
+            yield '{"status": "ok"}'
+        if firmware == "sync":
+            t = test_hardware.Linkage()
+            t.test_sync()
     except Exception as e:
         print(e)
         yield '{"status": "error"}'
