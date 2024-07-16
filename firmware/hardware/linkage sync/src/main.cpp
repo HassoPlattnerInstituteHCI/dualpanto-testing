@@ -112,6 +112,7 @@ void loop_encoders(){
     if (i == 1 || i == 2) { new_encoder_pos[i] = (uint16_t)(abs(16383 - (int32_t)new_encoder_pos[i]));}
 
     if (i < 4){
+    if (new_encoder_pos[i] == 0){continue;}
     if (abs(last_encoder_pos[i] - new_encoder_pos[i]) > 15000){
       if (new_encoder_pos[i] < last_encoder_pos[i]){
         overflow_correction[i] += 16383;
@@ -237,14 +238,14 @@ void move_to(int32_t pos[6]){
       // float pwm_speed = 0.07*PWM_MAX - (new_speed * 0.07*PWM_MAX);
       // forwards
 
-      float speed = 0.2 * min(1.0f, pid_value(i, pos[i], encoders[i]))*PWM_MAX;
+      float speed = 0.3 * min(1.0f, pid_value(i, pos[i], encoders[i]))*PWM_MAX;
       
-      if (pos[i] - encoders[i] > 0){
+      if (pos[i] - encoders[i] > 50){
         ledcWrite(i+4, 0);
         ledcWrite(i, speed); //+ 0.05 * (1 - 1 / integral[i]));
         
         //ledcWrite(i, 0.1*PWM_MAX);
-      } else if (pos[i] - encoders[i] < 0){
+      } else if (pos[i] - encoders[i] < -50){
         ledcWrite(i, 0);
         ledcWrite(i + 4, speed);//+ 0.05 * (1 - 1 / abs(integral[i])));
         
@@ -262,7 +263,7 @@ void move_to(int32_t pos[6]){
     //    ledcWrite(i, 0);
     //    ledcWrite(i+4, 0);
     // }
-    // delay(1);
+    //delay(1);
 
     //for (int i = 0; i < 6; i++){last_encoders[i] = encoders[i];}
     loop_encoders();
@@ -272,12 +273,16 @@ void move_to(int32_t pos[6]){
 
 int32_t new_encoders[6];
 void move_in_sync(){
-  loop_encoders();
+  //loop_encoders();
   for (int i = 0; i < 6; i++){new_encoders[i] = encoders[i];}
   new_encoders[0] = encoders[3];
   new_encoders[3] = encoders[0];
   new_encoders[1] = encoders[2];
   new_encoders[2] = encoders[1];
+//  new_encoders[0] = (encoders[3] + new_encoders[0]) / 2;
+//  new_encoders[3] = (encoders[3] + new_encoders[0]) / 2;
+//  new_encoders[1] = (encoders[2] + encoders[1]) / 2;
+//  new_encoders[2] = (encoders[2] + encoders[1]) / 2;
   move_to(new_encoders);
 }
 
@@ -318,9 +323,8 @@ void loop(){
   //delay(2);
   //loop_motors();
   for (int i = 0; i < 1000; i++){
-    loop_encoders();
-    
     move_in_sync();
   }
+  loop_encoders();
   send_encoders();
 }

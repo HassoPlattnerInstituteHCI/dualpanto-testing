@@ -41,6 +41,11 @@ def upload_firmware(firmware):
         if firmware == "sync":
             t = test_hardware.Linkage()
             t.test_sync()
+            yield '{"status": "ok"}'
+        if firmware == "line_wall":
+            t = test_firmware.Haptics()
+            t.test_line_wall()
+            yield '{"status": "ok"}'
     except Exception as e:
         print(e)
         yield '{"status": "error"}'

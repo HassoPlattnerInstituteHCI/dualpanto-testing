@@ -14,34 +14,77 @@
         <div class="vertical-container">
             <div class="horizontal-container">
                 <div class="left">
-                    <div class="list-item" onclick="showInfo('upload_firmware')">
-                        <div>
+                    <div class="list-item" id="start-test" onclick="showInfo(this, 'info_hello_world')">
+                        <div class="list-item-text">
                             <h2>Upload firmware test</h2>
                             <p>Check if a connection to the panto exists</p>
                         </div>
                         <button onclick="do_test(this, 'hello_world')">Start Test</button>
                     </div>
-                    <div class="list-item" onclick="showInfo('Item 2')">
-                        <div>
+                    <div class="list-item" onclick="showInfo(this, 'info_encoder_motor_automatic')">
+                        <div class="list-item-text">
                             <h2>Automatic Motor + Encoder</h2>
-                            <p>Automatic motor encoder combination test</p>
+                            <p>Automatic motor/encoder test</p>
                         </div>
                         <button onclick="do_test(this, 'encoder_motor_automatic')">Start Test</button>
                     </div>
-                    <div class="list-item">
-                        <div>
+                    <div class="list-item" onclick="showInfo(this, 'info_sync')">
+                        <div class="list-item-text">
                             <h2>Linkage Sync</h2>
                             <p>Sync the handles (mirrored)</p>
                         </div>
-                        <button onclick="showInfo('Item 3')">More Info</button>
+                        <button onclick="do_test(this, 'sync')">Start Test</button>
+                    </div>
+                    <div class="list-item" onclick="showInfo(this, 'info_line_wall')">
+                        <div class="list-item-text">
+                            <h2>Line Wall</h2>
+                            <p>Render a haptic line</p>
+                        </div>
+                        <button onclick="do_test(this, 'line_wall')">Start Test</button>
                     </div>
 
                     <!-- Add more list items as needed -->
                 </div>
                 <div class="right">
                     <div class="additional-info" id="info-box">
-                        <h2>Dualpanto Testing Framework</h2>
-                        <p>Start by testing the firmware upload</p>
+                        <div class="info-box-item" id="default">
+                            <h2>Dualpanto Testing Framework</h2>
+                            <p>Start by testing the firmware upload</p>
+                        </div>
+                        <div class="info-box-item" id="info_hello_world">
+                            <h2>Upload firmware test</h2>
+                            <p>Upload a hello world firmware to the Panto to check if a connection can be established.</p>
+                            <p>1. open config.py and enter your COM port to connect dualpanto.<br>
+                                2. All tests upload a firmware for each unit-test. You probably need to push button back of dualpanto when you upload a firmware (it depends on OS). </p>
+                            <img src="static/dualpanto_switch.jpg" style="height: 200px"/>
+                        </div>
+                        <div class="info-box-item" id="info_encoder_motor_automatic">
+                            <h2>Encoder Motor Automatic Test</h2>
+                            <p>Test if the handles move freely and the encoders work</p>
+                            <p>1. Connect charged battery (and flip battery switch in direction of the middle of the panto)<br>
+                                2. Clear the space the handles can reach and pay attention that the battery is not touching the handles<br>
+                                3. Bring the handles in the default positon<br>
+                                4. Start test and press the upload button
+                            </p>
+
+                        </div>
+                        <div class="info-box-item" id="info_sync">
+                            <h2>Linkage Move in Sync</h2>
+                            <p>Sync the handles (mirrored)</p>
+                            <p>1. Connect charged battery (and flip battery switch in direction of the middle of the panto)<br>
+                                2. Clear the space the handles can reach and pay attention that the battery is not touching the handles<br>
+                                3. Start test and press the upload button
+                            </p>
+                        </div>
+                        <div class="info-box-item" id="info_line_wall">
+                            <h2>Line Wall</h2>
+                            <p>Render a line wall with the dualpanto framework</p>
+                            <p>1. Connect charged battery (and flip battery switch in direction of the middle of the panto)<br>
+                                2. Clear the space the handles can reach and pay attention that the battery is not touching the handles<br>
+                                3. Bring the handles in the default positon<br>
+                                4. Start test and press the upload button
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

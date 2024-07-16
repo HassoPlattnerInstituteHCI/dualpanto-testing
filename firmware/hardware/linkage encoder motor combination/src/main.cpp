@@ -112,7 +112,10 @@ void loop_encoders(){
   for (int i = 0; i < 6; i++){
     if (i == 1 || i == 2) { new_encoder_pos[i] = (uint16_t)(abs(16383 - (int32_t)new_encoder_pos[i]));}
 
+
     if (i < 4){
+    if (new_encoder_pos[i] == 0){continue;}
+
     if (abs(last_encoder_pos[i] - new_encoder_pos[i]) > 15000){
       if (new_encoder_pos[i] < last_encoder_pos[i]){
         overflow_correction[i] += 16383;
@@ -197,47 +200,68 @@ void move_to_end(uint16_t pid){
   }
 }
 
-std::deque<uint16_t> last_positions1;
-std::deque<uint16_t> last_positions2;
+//std::deque<uint16_t> last_positions1;
+//std::deque<uint16_t> last_positions2;
+//void both_move_to_end(uint16_t pid1, uint16_t pid2){
+//  loop_encoders();
+//  if (last_positions1.size() >= 3){ last_positions1.pop_front(); }
+//  last_positions1.push_back(encoders[pid1 % 4] - 4);
+//
+//  if (last_positions2.size() >= 3){ last_positions2.pop_front(); }
+//  last_positions2.push_back(encoders[pid2 % 4] - 4);
+//
+//    int last_pos1 = encoders[pid1 % 4] - 4;
+//    int last_pos2 = encoders[pid1 % 4] - 4;
+//
+//    uint16_t max1 = *std::max_element(last_positions1.begin(), last_positions1.end());
+//    uint16_t min1 = *std::min_element(last_positions1.begin(), last_positions1.end());
+//    uint16_t max2 = *std::max_element(last_positions2.begin(), last_positions2.end());
+//    uint16_t min2 = *std::min_element(last_positions2.begin(), last_positions2.end());
+//
+//  while (abs(max1 - min1) > 10 || abs(max2 - min2) > 10){
+//    int new_speed1 = (100 + abs(last_pos1 - encoders[pid1 % 4])) / 100;
+//    int new_speed2 = (100 + abs(last_pos2 - encoders[pid2 % 4])) / 100;
+//    ledcWrite(pid1, (1 / new_speed1) * 0.2*PWM_MAX);
+//    ledcWrite(pid2, (1 / new_speed2) * 0.2*PWM_MAX);
+//    delay(10);
+//    ledcWrite(pid1, 0);
+//    ledcWrite(pid2, 0);
+//    //delay(10);
+//
+//    if (last_positions1.size() >= 5){ last_positions1.pop_front(); }
+//    last_positions1.push_back(encoders[pid1 % 4] - 4);
+//
+//    if (last_positions2.size() >= 5){ last_positions2.pop_front(); }
+//    last_positions2.push_back(encoders[pid2 % 4] - 4);
+//
+//    last_pos1 = encoders[pid1 % 4];
+//    last_pos2 = encoders[pid2 % 4];
+//
+//    max1 = *std::max_element(last_positions1.begin(), last_positions1.end());
+//    min1 = *std::min_element(last_positions1.begin(), last_positions1.end());
+//    max2 = *std::max_element(last_positions2.begin(), last_positions2.end());
+//    min2 = *std::min_element(last_positions2.begin(), last_positions2.end());
+//    loop_encoders();
+//  }
+//}
+
 void both_move_to_end(uint16_t pid1, uint16_t pid2){
   loop_encoders();
-  if (last_positions1.size() >= 3){ last_positions1.pop_front(); }
-  last_positions1.push_back(encoders[pid1 % 4] - 4);
 
-  if (last_positions2.size() >= 3){ last_positions2.pop_front(); }
-  last_positions2.push_back(encoders[pid2 % 4] - 4);
+  int last_pos1 = encoders[pid1 % 4] - 4;
+  int last_pos2 = encoders[pid1 % 4] - 4;
 
-    int last_pos1 = encoders[pid1 % 4] - 4;
-    int last_pos2 = encoders[pid1 % 4] - 4;
-
-    uint16_t max1 = *std::max_element(last_positions1.begin(), last_positions1.end());
-    uint16_t min1 = *std::min_element(last_positions1.begin(), last_positions1.end());
-    uint16_t max2 = *std::max_element(last_positions2.begin(), last_positions2.end());
-    uint16_t min2 = *std::min_element(last_positions2.begin(), last_positions2.end());
-
-  while (abs(max1 - min1) > 10 || abs(max2 - min2) > 10){
-    int new_speed1 = (100 + abs(last_pos1 - encoders[pid1 % 4])) / 100;
-    int new_speed2 = (100 + abs(last_pos2 - encoders[pid2 % 4])) / 100;
-    ledcWrite(pid1, (1 / new_speed1) * 0.2*PWM_MAX);
-    ledcWrite(pid2, (1 / new_speed2) * 0.2*PWM_MAX);
-    delay(10);
+  while ((abs(last_pos1 - encoders[pid1 % 4]) > 2) || (abs(last_pos2 - encoders[pid2 % 4]) > 2)){
+    int new_speed1 = (50 + abs(last_pos1 - encoders[pid1 % 4])) / 50;
+    int new_speed2 = (50 + abs(last_pos2 - encoders[pid2 % 4])) / 50;
+    ledcWrite(pid1, (1 / new_speed1) * 0.3*PWM_MAX);
+    ledcWrite(pid2, (1 / new_speed2) * 0.3*PWM_MAX);
+    delay(5);
     ledcWrite(pid1, 0);
     ledcWrite(pid2, 0);
     //delay(10);
-
-    if (last_positions1.size() >= 5){ last_positions1.pop_front(); }
-    last_positions1.push_back(encoders[pid1 % 4] - 4);
-
-    if (last_positions2.size() >= 5){ last_positions2.pop_front(); }
-    last_positions2.push_back(encoders[pid2 % 4] - 4);
-
     last_pos1 = encoders[pid1 % 4];
     last_pos2 = encoders[pid2 % 4];
-
-    max1 = *std::max_element(last_positions1.begin(), last_positions1.end());
-    min1 = *std::min_element(last_positions1.begin(), last_positions1.end());
-    max2 = *std::max_element(last_positions2.begin(), last_positions2.end());
-    min2 = *std::min_element(last_positions2.begin(), last_positions2.end());
     loop_encoders();
   }
 }
@@ -271,8 +295,10 @@ void move_linkage(uint16_t dir1, uint16_t dir2){
 //    ledcWrite(dir1, 0.4*PWM_MAX);
 //    ledcWrite(dir2, 0.3*PWM_MAX);
 //    delay(500);
-//    ledcWrite(dir1, 0);
-//    ledcWrite(dir2, 0);
+    ledcWrite(dir1, 0);
+    ledcWrite(dir2, 0);
+    ledcWrite(dir1 % 4, 0);
+    ledcWrite(dir2 % 4, 0);
 
     both_move_to_end(dir1 % 4, dir2 % 4);
     both_move_to_end(dir1, dir2);
@@ -306,30 +332,3 @@ void setup(){
 void loop(){
   delay(1);
 }
-
-
-
-//std::deque<uint16_t> last_positions1[4];
-//void both_move_to_end(uint16_t pid1, uint16_t pid2){
-//  loop_encoders();
-//  if (last_positions1.size() >= 5){ last_positions1.pop_front(); }
-//  last_positions1.push_back(encoders[pid1 % 4] - 4;);
-//
-//
-//  int last_pos1 = encoders[pid1 % 4] - 4;
-//  int last_pos2 = encoders[pid1 % 4] - 4;
-//
-//  while ((abs(last_pos1 - encoders[pid1 % 4]) > 3) || (abs(last_pos2 - encoders[pid2 % 4]) > 3)){
-//    int new_speed1 = (100 + abs(last_pos1 - encoders[pid1 % 4])) / 100;
-//    int new_speed2 = (100 + abs(last_pos2 - encoders[pid2 % 4])) / 100;
-//    ledcWrite(pid1, (1 / new_speed1) * 0.2*PWM_MAX);
-//    ledcWrite(pid2, (1 / new_speed2) * 0.2*PWM_MAX);
-//    delay(10);
-//    ledcWrite(pid1, 0);
-//    ledcWrite(pid2, 0);
-//    //delay(10);
-//    last_pos1 = encoders[pid1 % 4];
-//    last_pos2 = encoders[pid2 % 4];
-//    loop_encoders();
-//  }
-//}

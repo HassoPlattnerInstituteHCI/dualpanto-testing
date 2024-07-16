@@ -21,7 +21,8 @@ class Basic(unittest.TestCase):
 class Haptics(unittest.TestCase):
 
     def test_line_wall(self):
-        res = util.upload_firmware("firmware/haptics/line wall 2/firmware", False)
+        res = util.upload_firmware("firmware/haptics/line wall/firmware", False)
+        self.assertEqual(res, 0, msg='failed to upload firmware. please first check platformIO config and installation')
         print("")
         print("==========================")
         print("===== TEST LINE WALL =====")
@@ -36,7 +37,7 @@ class Haptics(unittest.TestCase):
         print("==========================")
         print("===== TEST LINE WALL =====")
         print("==========================")
-        input()
+        #input()
         self.assertEqual(res, 0, msg='failed to upload firmware. please first check platformIO config and installation')
 
     def test_force_field(self):

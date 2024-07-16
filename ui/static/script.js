@@ -4,7 +4,13 @@ function load_console_iframe(){
     <iframe class="console-iframe" id="console_iframe" src="/stream"></iframe>`
 }
 
-window.onload = load_console_iframe;
+function window_onload(){
+    load_console_iframe();
+    console.log(document.getElementById("start-test"));
+    showInfo(document.getElementById("start-test"), 'info_hello_world');
+}
+
+window.onload = window_onload;
 
 var console_patterns = {
     "Failed to connect to ESP32: Timed out waiting for packet header":
@@ -15,36 +21,45 @@ var console_patterns = {
         "Check if you have connected the USB correctly and that you are not using a charging only cable.",
     "could not open port":
         "Check if you are using the correct COM port. \nCurrent COM port is: {serial_port}",
-    // automatic encoder linkage test
+    // automatic encoder linkage test#
+    "check connection cable":
+        "Check the cable which connects the dualpanto pcbs. It might be disconnected.",
     "start and end position are not aligning":
-        "Check if the handles can move freely. If the handles move freely and one of the handles didn't end up in the default start position ask TA"
+        "Check if the handles can move freely and if you moved the handles to the default position at the start. If the handles move freely and one of the handles didn't end up in the default start position there could be encoder drift",
+    "handle didn't move far enough":
+        "Handle didn't move far enough. Check if the handles can move freely. If they can there yould be a problem with the encoders",
+    // sync
+    "[Errno 16] Device or resource busy":
+        "Com port: {serial_port} already in use. Check if another program already uses this com port or established a serial connection to the device."
+
 }
 
 function upload_firmware(firmware){
+    load_console_iframe() //reload the iframe
     return fetch("/upload_firmware/" + firmware)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        return new Promise((resolve, reject) => { setTimeout(function(){
+
         var console_out = document.getElementById("console_iframe").contentWindow.document.body.innerHTML;
         console_out = console_out.split("-- Dualpanto tester --").at(-1)
 
         for (const err in console_patterns){
             if (console_out.includes(err)){
-                var msg = console_patterns[err];
-
-                if (err.includes("{serial_port}")){
+                let msg = console_patterns[err];
+                if (msg.includes("{serial_port}")){
                     // ! serial port has to be in the console output
                     var serial_port_location = console_out.indexOf("Serial port");
                     var serial_port = console_out.substring(serial_port_location, serial_port_location + 100).split(/\s+/)[2];
                     console.log(serial_port)
-                    msg.replace("{serial_port}", serial_port);
+                    msg = msg.replace("{serial_port}", serial_port);
                 }
 
                 alert(msg);
             }
         }
-        return data;
-    });
+        resolve(data);
+    }, 500);});});
 }
 
 function do_test(button, test_name){
@@ -52,6 +67,7 @@ function do_test(button, test_name){
     button.innerHTML = "Loading...";
 
     upload_firmware(test_name).then((res) => {
+        console.log(res);
         if (res == null) {
             alert("Check if localhost server is running.");
         }
@@ -71,18 +87,20 @@ function do_test(button, test_name){
     //infoBox.innerHTML = `<h2>${item}</h2><p>More detailed information about ${item}.</p>`;
 }
 
-function showInfo(test_name) {
-    const infoBox = document.getElementById('info-box');
-    infoBox.innerHTML = "";
-     switch (test_name){
-        case "upload_firmware":
-            infoBox.innerHTML = "<h2>Upload firmware test</h2>"
-            infoBox.innerHTML +=`<h4>Troubleshooting steps</h4><p> 1. Check if USB is connected<br>
-            2. Check if the correct COM Port is set <(more info)> <br>
-            3. Are you pushing the correct button of the dualpanto? </p>`
-        break;
+function showInfo(button, test_name) {
+
+    for (const list_item of document.getElementsByClassName("list-item")){
+        list_item.style.backgroundColor = "#a5d6a7"
     }
-//    infoBox.innerHTML += '<h4>Console Output</h4><iframe class="console-iframe" id="console_iframe" src="/stream"></iframe>'
+    button.style.backgroundColor = "#4CAF50";
+
+    for (const info_box_item of document.getElementsByClassName("info-box-item")){
+        console.log(document.getElementsByClassName("info-box-item"), info_box_item)
+        info_box_item.style.display = "none";
+    }
+
+    const infoBox = document.getElementById(test_name);
+    infoBox.style.display = "block";
 }
 
 function simple_hash(s) {
