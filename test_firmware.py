@@ -105,6 +105,6 @@ class Kinematics(unittest.TestCase):
 
 class UploadDualPantoFramework(unittest.TestCase):
     def test_upload_dp_firmware(self):
-        res = util.compile_firmware('firmware/dualpantoframework/firmware ')
+        res = util.compile_firmware('firmware/dualpantoframework/firmware')
         self.assertEqual(res, 0, msg='failed to compile firmware. please first check platformIO config and installation')
 
