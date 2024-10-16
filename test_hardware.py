@@ -100,7 +100,7 @@ class Linkage(unittest.TestCase):
 
     def handle_serial_connection(self):
         print("Connecting...")
-        with serial.Serial(config.COM_PORT, 9600, timeout=1, parity=serial.PARITY_EVEN) as ser:
+        with serial.Serial(config.COM_PORT, 115200, timeout=1, parity=serial.PARITY_EVEN) as ser:
             time.sleep(1)
             self.assertNotEqual(ser.inWaiting(), 0,
                                 msg="could not establish serial connection... try restarting the panto")

@@ -26,7 +26,7 @@ uint16_t buf = 0;
 
 void setup()
 {
-    Serial.begin(9600);    // opens serial port, sets data rate to 9600 bps
+    Serial.begin(115200);    // opens serial port, sets data rate to 9600 bps
 
     pinMode(13, OUTPUT);
     pinMode(c_hspiSsPin1, OUTPUT);

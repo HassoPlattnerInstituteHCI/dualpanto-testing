@@ -71,9 +71,12 @@ void physicsSetup()
 
         std::vector<Vector2D> path;
         // render line wall
-        path.emplace_back(-40.0f, -70.0f);
-        path.emplace_back(40.0f, -70.0f);
-
+        path.emplace_back(-100.0f, -70.0f);
+        path.emplace_back(150.0f, -70.0f);
+//        path.emplace_back(-20.0f,-35.0f);
+//        path.emplace_back(-20.0f,-70.0f);
+//        path.emplace_back(20.0f,-70.0f);
+//        path.emplace_back(20.0f,-35.0f);
         auto id = 1;
         pantoPhysics[i].godObject()->createObstacle(id, path, false);
         pantoPhysics[i].godObject()->enableObstacle(id, true);
