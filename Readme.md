@@ -39,7 +39,7 @@ or [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testin
 ### Alternative B: VScode
 1. download [VScode](https://code.visualstudio.com/)
 2. clone this repo and open it with VScode
-3. [set venv and install package using requirements.txt](https://code.visualstudio.com/docs/python/environments) 
+3. shift + command + P -> >Python: Create Environment -> Venv -> select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
 4. follow Test Flow section ([Test flow in VSCode](https://code.visualstudio.com/docs/python/testing))
 
 ### Alternative C: Command Line
