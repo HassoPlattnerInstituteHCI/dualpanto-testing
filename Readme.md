@@ -24,7 +24,7 @@ Please check [BIS.md](BIS.md) first.
  - Select at least the workload “Desktopentwicklung mit C++”
 
 ## 3. Install IDE
-We highly recommend to use PyCharm to run this test flow, but you can also use VSCode.
+We highly recommend to use PyCharm to run this test flow, but you can also use VSCode or the command line.
 ### Alternative A: PyCharm (recommended)
 1. download [PyCharm](https://www.jetbrains.com/community/education/#students)
 2. clone this repo and open it with pycharm
