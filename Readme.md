@@ -7,25 +7,25 @@ This project is work-in-progress. Welcome to contribute.
 Please check [BIS.md](BIS.md) first.
 
 
-## Requirements
-### Install the ESP32 driver
+# Installation
+## 1. Install the ESP32 driver
 - [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) the latest installer for your OS-Version
 - Run the installer
 
-### Setup C++ environment
+## 2. Setup C++ environment
 
-#### macOS
+### macOS
  - Go to Appstore and install Xcode
  - Run `xcode-select –install` to install the compilers
  - Run `sudo xcode-select -s /Applications/Xcode.app/Contents/Developer`
 
-#### windows
+### windows
  - Install Visual Studio 2019 or 2017
  - Select at least the workload “Desktopentwicklung mit C++”
 
-### Install IDE
+## 3. Install IDE
 We highly recommend to use PyCharm to run this test flow, but you can also use VSCode.
-#### Alternative 1: PyCharm (recommended)
+### Alternative A: PyCharm (recommended)
 1. download [PyCharm](https://www.jetbrains.com/community/education/#students)
 2. clone this repo and open it with pycharm
 3. [create vertial environment (we use python 3.7)](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html)and [install package using requirements.txt](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
@@ -36,16 +36,16 @@ you can run  unittest from Markdown preview
 ![markdown](./resources/execute.jpg)
 
 or [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html#create-test)
-#### Alternative 2: VScode
+### Alternative B: VScode
 1. download [VScode](https://code.visualstudio.com/)
 2. clone this repo and open it with VScode
 3. [set venv and install package using requirements.txt](https://code.visualstudio.com/docs/python/environments) 
 4. follow Test Flow section ([Test flow in VSCode](https://code.visualstudio.com/docs/python/testing))
 
-#### Command Line
+### Alternative C: Command Line
 you can also run all unittest from command line interface if struggle with setting up IDE. Install python library in requirements.txt, then execute script.
 
-# Install submodules
+## 4. Install submodules
 run `git submodule init`, then `git submodule update`
 
 # Uploading DualpantoFramework
