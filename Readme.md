@@ -1,6 +1,9 @@
-# Dualpanto Testing
+# Dualpanto: Install Firmware & Testing
 
-The goal of this repository is to provide semi-automatic testing for the dualpanto device. This involves basic functionality checks of the hardware, the haptic rendering, communication protocol and the unity integration.
+The purposes of this repository are 
+
+1. to install the dualpanto framework firmware to the dualpanto devices, which is used in app development
+2. to provide semi-automatic testing for the dualpanto device. This involves basic functionality checks of the hardware, the haptic rendering, communication protocol and the unity integration. A test will install a different testing firmware
 
 This project is work-in-progress. Welcome to contribute.
 ### For BIS participants
