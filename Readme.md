@@ -8,11 +8,11 @@ Please check [BIS.md](BIS.md) first.
 
 
 # Installation
-## 1. Install the ESP32 driver
+## 1. Install the ESP32 driver (so your computer can communicate with the dualpanto)
 - [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) the latest installer for your OS-Version
 - Run the installer
 
-## 2. Setup C++ environment
+## 2. Setup C++ environment (so that C++ dependencies of this repo can be compiled)
 
 ### macOS
  - Go to Appstore and install Xcode
@@ -23,7 +23,7 @@ Please check [BIS.md](BIS.md) first.
  - Install Visual Studio 2019 or 2017
  - Select at least the workload “Desktopentwicklung mit C++”
 
-## 3. Install IDE
+## 3. Install IDE (this is where you will run the Dualpanto tests)
 We highly recommend to use PyCharm to run this test flow, but you can also use VSCode or the command line.
 ### Alternative A: PyCharm (recommended)
 1. download [PyCharm](https://www.jetbrains.com/community/education/#students)
@@ -45,20 +45,8 @@ or [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testin
 ### Alternative C: Command Line
 you can also run all unittest from command line interface if struggle with setting up IDE. Install python library in requirements.txt, then execute script.
 
-## 4. Install submodules
+## 4. Install submodules ()
 run `git submodule init`, then `git submodule update`
-
-# Uploading DualpantoFramework
-Sometimes you want to upload dualpanto famework again when...
-
-1. you update dualpanto framework (e.g. you tune PID)
-2. you plug dualpanto device into different PC
-    - we observe dualpanto has some wall rendering issue when you connect dualpanto to other PC. e.g, you uplaod firmware from mac and connect to windows pc.
-    - this is not always happend. but You need to keep this in mind.
-    - We haven't known why so. Welcome you to contribute here!
-
-`python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
-
 
 # Test Flow
 Most of the test is not semi-automated since they are related to haptics and mechanical issue. Check `How to test?`.
@@ -154,8 +142,19 @@ flowchart TD;
 
 **WIP**
 
+# Uploading DualpantoFramework
+Sometimes you want to upload dualpanto famework again when...
 
-## Development
+1. you update dualpanto framework (e.g. you tune PID)
+2. you plug dualpanto device into different PC
+    - we observe dualpanto has some wall rendering issue when you connect dualpanto to other PC. e.g, you uplaod firmware from mac and connect to windows pc.
+    - this is not always happend. but You need to keep this in mind.
+    - We haven't known why so. Welcome you to contribute here!
+
+`python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
+
+
+# Development
 This project is currenty under developement. 
 For questions, please reach out to martin.taraz@hpi.de, shohei.katakura@hpi.de
 
