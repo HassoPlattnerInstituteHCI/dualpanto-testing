@@ -53,28 +53,27 @@ you can also run all unittest from command line interface if struggle with setti
 
 You need to have the dualpanto connected to your computer to do this.
 
-In a terminal, navigate to the dualpanto-testing folder and run this command: 
+1. open `config.py` and enter your COM port to connect dualpanto.
+2. In a terminal, navigate to the dualpanto-testing folder and run this command: `python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
 
-`python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
+If all of this worked, you did successfully setup the Dualpanto. If not, see the next section.
 
-Now you are done with the setup.
+# If something doesn't work, run these tests
 
-You will repeat this step later whenever...
+## When you plug Dualpanto into a new PC (or update the framework)
 
-1. you update dualpanto framework (e.g. you tune PID)
-2. you plug dualpanto device into different PC
+Repeat step 5 (uploading the firmware).
+
+known issues when you plug dualpanto device into different PC:
     - we observe dualpanto has some wall rendering issue when you connect dualpanto to other PC. e.g, you uplaod firmware from mac and connect to windows pc.
     - this is not always happend. but You need to keep this in mind.
     - We haven't known why so. Welcome you to contribute here!
-
-# Running the tests
+    
 Most of the test is not semi-automated since they are related to haptics and mechanical issue. Check `How to test?`.
 
 **When you need to ask question on discord, please tell us which test you failed, and describe error or issue you have precise as possible.**
 
 ## Configurate test flow
-
-1. open `config.py` and enter your COM port to connect dualpanto.
 2. All test upload a firmware for each unit-test. You probably need to push button back of dualpantowhen you upload a firmware (it depends on OS).
 ![swith](./resources/dualpanto_switch.jpg)
    
