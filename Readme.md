@@ -24,20 +24,19 @@ Please check [BIS.md](BIS.md) first.
  - Select at least the workload “Desktopentwicklung mit C++”
 
 ### Install IDE
-We highly recommend to use PyCharm to run this test flow.
-#### PyCharm
+We highly recommend to use PyCharm to run this test flow, but you can also use VSCode.
+#### Alternative 1: PyCharm (recommended)
 1. download [PyCharm](https://www.jetbrains.com/community/education/#students)
 2. clone this repo and open it with pycharm
-3. run `git submodule init`, then `git submodule update`
-4. [create vertial environment (we use python 3.7)](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html)and [install package using requirements.txt](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
-5. install [Mermaid](https://plugins.jetbrains.com/plugin/20146-mermaid) plugin for flowchart vis
-6. follow Test Flow section
+3. [create vertial environment (we use python 3.7)](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html)and [install package using requirements.txt](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
+4. install [Mermaid](https://plugins.jetbrains.com/plugin/20146-mermaid) plugin for flowchart vis
+5. follow Test Flow section
 
 you can run  unittest from Markdown preview 
 ![markdown](./resources/execute.jpg)
 
 or [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html#create-test)
-#### VScode
+#### Alternative 2: VScode
 1. download [VScode](https://code.visualstudio.com/)
 2. clone this repo and open it with VScode
 3. [set venv and install package using requirements.txt](https://code.visualstudio.com/docs/python/environments) 
@@ -45,6 +44,9 @@ or [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testin
 
 #### Command Line
 you can also run all unittest from command line interface if struggle with setting up IDE. Install python library in requirements.txt, then execute script.
+
+# Install submodules
+run `git submodule init`, then `git submodule update`
 
 # Uploading DualpantoFramework
 Sometimes you want to upload dualpanto famework again when...
