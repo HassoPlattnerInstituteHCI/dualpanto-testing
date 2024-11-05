@@ -49,6 +49,19 @@ you can also run all unittest from command line interface if struggle with setti
 - in a terminal, navigate to the dualpanto-testing folder which you cloned this repo into
 - run `git submodule init`, then `git submodule update`
 
+## 5. Uploading the firmware to the Dualpanto
+
+You need to have the dualpanto connected to do this.
+`python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
+
+You will repeat this step when...
+
+1. you update dualpanto framework (e.g. you tune PID)
+2. you plug dualpanto device into different PC
+    - we observe dualpanto has some wall rendering issue when you connect dualpanto to other PC. e.g, you uplaod firmware from mac and connect to windows pc.
+    - this is not always happend. but You need to keep this in mind.
+    - We haven't known why so. Welcome you to contribute here!
+
 # Running the tests
 Most of the test is not semi-automated since they are related to haptics and mechanical issue. Check `How to test?`.
 
@@ -142,16 +155,6 @@ flowchart TD;
 
 **WIP**
 
-# Optional: Re-Uploading the DualpantoFramework to the Dualpanto
-Sometimes you want to upload dualpanto framework again when...
-
-1. you update dualpanto framework (e.g. you tune PID)
-2. you plug dualpanto device into different PC
-    - we observe dualpanto has some wall rendering issue when you connect dualpanto to other PC. e.g, you uplaod firmware from mac and connect to windows pc.
-    - this is not always happend. but You need to keep this in mind.
-    - We haven't known why so. Welcome you to contribute here!
-
-`python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
 
 
 # Feedback
