@@ -1,12 +1,10 @@
 ### COM PORT###
-# MAC:
-COM_PORT = "/dev/tty.SLAB_USBtoUART"
 
-# Windows (please check COM port number via device manager etc)
-# COM_PORT = "//.//COM3"
+COM_PORT = "" # Enter your COM_PORT here
 
-#Linux
-#COM_PORT = "/dev/ttyUSB0"
+# Typical Mac COM PORT: "/dev/tty.SLAB_USBtoUART"
+# Typical Windows COM PORT: "//.//COM3"
+# Typical Linux COM PORT: "/dev/ttyUSB0"
 
 ### Flag
 uploading_firmware = True
