@@ -12,7 +12,7 @@ Please check [BIS.md](BIS.md) first.
 - [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) the latest installer for your OS-Version
 - Run the installer
 
-## 2. Setup C++ environment (so that C++ dependencies of this repo can be compiled)
+## 2. Setup C++ environment (so that C++ code of this repo can be compiled)
 
 ### macOS
  - Go to Appstore and install Xcode
@@ -25,17 +25,17 @@ Please check [BIS.md](BIS.md) first.
 
 ## 3. Install IDE (this is where you will run the Dualpanto tests)
 We highly recommend to use PyCharm to run this test flow, but you can also use VSCode or the command line.
-### Alternative A: PyCharm (recommended)
+### Alternative A: PyCharm (recommended, because you can directly run unit tests from the readme)
 1. download [PyCharm](https://www.jetbrains.com/community/education/#students)
 2. clone this repo and open it with pycharm
 3. [create vertial environment (we use python 3.7)](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html)and [install package using requirements.txt](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
 4. install [Mermaid](https://plugins.jetbrains.com/plugin/20146-mermaid) plugin for flowchart vis
-5. follow Test Flow section
 
-you can run  unittest from Markdown preview 
+if you chose PyCharm, you can run unittest from Markdown preview 
 ![markdown](./resources/execute.jpg)
 
-or [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html#create-test)
+alternatively, you can still [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html#create-test)
+
 ### Alternative B: VScode
 1. download [VScode](https://code.visualstudio.com/)
 2. clone this repo and open it with VScode
@@ -45,14 +45,13 @@ or [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testin
 ### Alternative C: Command Line
 you can also run all unittest from command line interface if struggle with setting up IDE. Install python library in requirements.txt, then execute script.
 
-## 4. Install submodules ()
+## 4. Install submodules (installs dependencies that are needed to run the tests)
 run `git submodule init`, then `git submodule update`
 
 # Test Flow
 Most of the test is not semi-automated since they are related to haptics and mechanical issue. Check `How to test?`.
 
 **When you need to ask question on discord, please tell us which test you failed, and describe error or issue you have precise as possible.**
-
 
 ## Configurate test flow
 
