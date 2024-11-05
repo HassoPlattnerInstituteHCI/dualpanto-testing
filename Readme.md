@@ -20,7 +20,7 @@ Please check [BIS.md](BIS.md) first.
  - Run `sudo xcode-select -s /Applications/Xcode.app/Contents/Developer`
 
 ### windows
- - Install Visual Studio 2019 or 2017 (you won't use this as your IDE, this is just to install the C++ dependency in the second step)
+ - Install Visual Studio 2019 or 2017 (you won't use this as your IDE, this is just to install the C++ dependency in the next step)
  - Select at least the workload “Desktopentwicklung mit C++”
 
 ## 3. Install IDE (this is where you will run the Dualpanto tests)
@@ -42,7 +42,7 @@ alternatively, you can still [execute unittest from scripts](https://www.jetbrai
 3. shift + command + P -> >Python: Create Environment -> Venv -> select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
 4. follow Test Flow section ([Test flow in VSCode](https://code.visualstudio.com/docs/python/testing))
 
-### Alternative C: Command Line
+### Alternative C: Command Line (hard, because you get no help with setup from the IDE and do everything yourself from the terminal)
 you can also run all unittest from command line interface if struggle with setting up IDE. Install python library in requirements.txt, then execute script.
 
 ## 4. Install submodules (installs dependencies that are needed to run the tests)
