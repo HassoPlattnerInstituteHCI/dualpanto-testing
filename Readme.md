@@ -141,8 +141,8 @@ flowchart TD;
 
 **WIP**
 
-# Uploading DualpantoFramework
-Sometimes you want to upload dualpanto famework again when...
+# Optional: Re-Uploading the DualpantoFramework to the Dualpanto
+Sometimes you want to upload dualpanto framework again when...
 
 1. you update dualpanto framework (e.g. you tune PID)
 2. you plug dualpanto device into different PC
@@ -153,7 +153,7 @@ Sometimes you want to upload dualpanto famework again when...
 `python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
 
 
-# Development
+# Feedback
 This project is currenty under developement. 
 For questions, please reach out to martin.taraz@hpi.de, shohei.katakura@hpi.de
 
