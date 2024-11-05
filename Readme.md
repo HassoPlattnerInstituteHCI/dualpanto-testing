@@ -46,7 +46,8 @@ alternatively, you can still [execute unittest from scripts](https://www.jetbrai
 you can also run all unittest from command line interface if struggle with setting up IDE. Install python library in requirements.txt, then execute script.
 
 ## 4. Install submodules (installs dependencies that are needed to run the tests)
-run `git submodule init`, then `git submodule update`
+- in a terminal, navigate to the dualpanto-testing folder which you cloned this repo into
+- run `git submodule init`, then `git submodule update`
 
 # Running the tests
 Most of the test is not semi-automated since they are related to haptics and mechanical issue. Check `How to test?`.
