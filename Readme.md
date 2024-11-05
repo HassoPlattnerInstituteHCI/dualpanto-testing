@@ -56,7 +56,7 @@ you can also run all unittest from command line interface if struggle with setti
 
 You need to have the dualpanto connected to your computer to do this.
 
-1. open `config.py` and enter your COM port to connect dualpanto. How to find your COM port: **Windows** : go to device manager / geräte-manager → ports/anschüsse (COM & LPT) and check the com port. **Mac**: use command ls /dev/cu.* in the terminal and look for /dev/cu.usbserial-xxx
+1. open `config.py` and enter your COM port to connect dualpanto. How to find your COM port: **Windows** : go to device manager / geräte-manager → ports/anschüsse (COM & LPT) and check the com port. **Mac**: use command `ls /dev/cu.*` in the terminal and look for `/dev/cu.usbserial-xxx`
 2. In a terminal, navigate to the dualpanto-testing folder and run this command: `python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
 
 If all of this worked, you did successfully setup the Dualpanto. If not, see the next section.
