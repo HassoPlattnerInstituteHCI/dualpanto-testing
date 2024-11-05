@@ -63,7 +63,7 @@ If all of this worked, you did successfully setup the Dualpanto. If not, see the
 
 # If something doesn't work, run these tests
 
-## When you plug Dualpanto into a new PC (or update the framework)
+## Whenever you plug Dualpanto into a new PC do this:
 
 Repeat step 5 (uploading the firmware).
 
