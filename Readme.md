@@ -12,8 +12,10 @@ Please check [BIS.md](BIS.md) first.
 
 # Setup
 ## 1. Install the ESP32 driver (so your computer can communicate with the dualpanto)
-- [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) the latest installer for your OS-Version
-- Run the installer
+- [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) the latest installer of the driver for your OS-Version
+- Unzip and run the installer
+  * Tips for windows: download "CP210x Universal Windows Driver," right-click on the silabser.inf file, and select _Install_
+  * Tips for mac: mount the DMG file and double-click on the	Silicon Labs VCP Driver. If the installation is blocked, go to the _System Preferences Security & Privacy_ pane to	unblock the system extension
 
 ## 2. Setup C++ environment (so that C++ code of this repo can be compiled)
 
