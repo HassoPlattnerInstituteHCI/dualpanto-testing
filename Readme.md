@@ -20,7 +20,7 @@ Please check [BIS.md](BIS.md) first.
  - Run `sudo xcode-select -s /Applications/Xcode.app/Contents/Developer`
 
 ### windows
- - Install Visual Studio 2019 or 2017
+ - Install Visual Studio 2019 or 2017 (you won't use this as your IDE, this is just to install the C++ dependency in the second step)
  - Select at least the workload “Desktopentwicklung mit C++”
 
 ## 3. Install IDE (this is where you will run the Dualpanto tests)
