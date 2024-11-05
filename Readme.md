@@ -38,9 +38,9 @@ alternatively, you can still [execute unittest from scripts](https://www.jetbrai
 
 ### Alternative B: VScode (can work, but if you already configured your environment in a weird way it might be hard for us to debug)
 1. download [VScode](https://code.visualstudio.com/)
-2. clone this repo and open it with VScode
-3. shift + command + P -> >Python: Create Environment -> Venv -> select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
-4. follow Test Flow section ([Test flow in VSCode](https://code.visualstudio.com/docs/python/testing))
+2. install the Python extension for VSCode (https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+3. clone this repo and open it with VScode
+4. shift + command + P -> >Python: Create Environment -> Venv -> select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
 
 ### Alternative C: Command Line (hard, because you get no help with setup from the IDE and do everything yourself from the terminal)
 you can also run all unittest from command line interface if struggle with setting up IDE. Install python library in requirements.txt, then execute script.
