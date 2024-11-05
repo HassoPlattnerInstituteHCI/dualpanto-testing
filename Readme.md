@@ -10,7 +10,7 @@ This project is work-in-progress. Welcome to contribute.
 Please check [BIS.md](BIS.md) first.
 
 
-# Installation
+# Setup and Installing Firmware
 ## 1. Install the ESP32 driver (so your computer can communicate with the dualpanto)
 - [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) the latest installer for your OS-Version
 - Run the installer
