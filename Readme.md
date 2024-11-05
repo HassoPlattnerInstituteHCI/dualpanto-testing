@@ -51,7 +51,7 @@ you can also run all unittest from command line interface if struggle with setti
 
 ## 5. Uploading the firmware to the Dualpanto
 
-You need to have the dualpanto connected to do this.
+You need to have the dualpanto connected to your computer to do this.
 
 In a terminal, navigate to the dualpanto-testing folder and run this command: 
 
