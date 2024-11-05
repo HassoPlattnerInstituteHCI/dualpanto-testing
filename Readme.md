@@ -2,8 +2,8 @@
 
 The purposes of this repository are 
 
-1. to install the dualpanto framework firmware to the dualpanto devices, which is used in app development (see step 5 of setup)
-2. to provide semi-automatic testing for the dualpanto device. This involves basic functionality checks of the hardware, the haptic rendering, communication protocol and the unity integration. A test will install a different testing firmware, which overwrites the dualpanto framework firmware.
+1. to install the dualpanto framework firmware to the dualpanto devices, which is needed for running & developing apps/games (follow the setup section. the actual firmware installation is in step 5)
+2. to provide semi-automatic testing for the dualpanto device. This involves basic functionality checks of the hardware, the haptic rendering, communication protocol and the unity integration. A test will install a different testing firmware, which overwrites the dualpanto framework firmware. (follow "If something doesn't work, run these tests")
 
 This project is work-in-progress. Welcome to contribute.
 ### For BIS participants
