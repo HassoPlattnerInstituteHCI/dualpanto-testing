@@ -35,7 +35,8 @@ We highly recommend to use PyCharm to run this test flow, but you can also use V
 4. install [Mermaid](https://plugins.jetbrains.com/plugin/20146-mermaid) plugin for flowchart vis
 
 if you chose PyCharm, you can run unittest from Markdown preview 
-![markdown](./resources/execute.jpg)
+
+<img src="/resources/execute.jpg" width="50%" />
 
 alternatively, you can still [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html#create-test)
 
