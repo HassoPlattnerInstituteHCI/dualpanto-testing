@@ -25,7 +25,7 @@ Please check [BIS.md](BIS.md) first.
 
 ## 3. Install IDE (this is where you will run the Dualpanto tests)
 We highly recommend to use PyCharm to run this test flow, but you can also use VSCode or the command line.
-### Alternative A: PyCharm (recommended, because you can directly run unit tests from the readme)
+### Alternative A: PyCharm (recommended, because your environment is guaranteed to work)
 1. download [PyCharm](https://www.jetbrains.com/community/education/#students)
 2. clone this repo and open it with pycharm
 3. [create vertial environment (we use python 3.7)](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html)and [install package using requirements.txt](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
@@ -36,7 +36,7 @@ if you chose PyCharm, you can run unittest from Markdown preview
 
 alternatively, you can still [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html#create-test)
 
-### Alternative B: VScode
+### Alternative B: VScode (can work, but if you already configured your environment in a weird way it might be hard for us to debug)
 1. download [VScode](https://code.visualstudio.com/)
 2. clone this repo and open it with VScode
 3. shift + command + P -> >Python: Create Environment -> Venv -> select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
