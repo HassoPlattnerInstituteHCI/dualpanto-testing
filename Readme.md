@@ -12,9 +12,6 @@ Please check [BIS.md](BIS.md) first.
 - [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) the latest installer for your OS-Version
 - Run the installer
 
-### Clone submodules
-run `git submodule init`, then `git submodule update`
-
 ### Setup C++ environment
 
 #### macOS
@@ -31,9 +28,10 @@ We highly recommend to use PyCharm to run this test flow.
 #### PyCharm
 1. download [PyCharm](https://www.jetbrains.com/community/education/#students)
 2. clone this repo and open it with pycharm
-3. [create vertial environment (we use python 3.7)](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html)and [install package using requirements.txt](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
-4. install [Mermaid](https://plugins.jetbrains.com/plugin/20146-mermaid) plugin for flowchart vis
-5. follow Test Flow section
+3. run `git submodule init`, then `git submodule update`
+4. [create vertial environment (we use python 3.7)](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html)and [install package using requirements.txt](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
+5. install [Mermaid](https://plugins.jetbrains.com/plugin/20146-mermaid) plugin for flowchart vis
+6. follow Test Flow section
 
 you can run  unittest from Markdown preview 
 ![markdown](./resources/execute.jpg)
