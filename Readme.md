@@ -62,6 +62,9 @@ You need to have the dualpanto connected to your computer to do this. Here is ho
 3. Find out your COM port (the COM port is basically the name that your computer gave to the connection to the dualpanto). How to find your COM port: **Windows** : go to device manager / geräte-manager → ports/anschüsse (COM & LPT) and check the com port (e.g. "//.//COM3"). **Mac**: use command `ls /dev/cu.*` in the terminal and look for e.g. "/dev/cu.SLAB_USBtoUART"
 4. open `config.py` in the dualpanto-testing folder and put your COM port into the space where it says `COM_PORT = "<put the COM PORT here>"`.
 5. In a terminal, navigate to the dualpanto-testing folder and run this command: `python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
+6. **Within a second** after doing step 5, start pressing this button on the back of the device (image below). **Keep pressing** until the installation is successful (i.e. the command in the terminal is finished. After the install is finished, you can release the button.
+
+![swith](./resources/dualpanto_switch.jpg)
 
 If all of this worked, you did successfully setup the Dualpanto. If not, see the next section.
 
