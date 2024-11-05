@@ -2,15 +2,15 @@
 
 The purposes of this repository are 
 
-1. to install the dualpanto framework firmware to the dualpanto devices, which is used in app development
-2. to provide semi-automatic testing for the dualpanto device. This involves basic functionality checks of the hardware, the haptic rendering, communication protocol and the unity integration. A test will install a different testing firmware
+1. to install the dualpanto framework firmware to the dualpanto devices, which is used in app development (see step 5 of setup)
+2. to provide semi-automatic testing for the dualpanto device. This involves basic functionality checks of the hardware, the haptic rendering, communication protocol and the unity integration. A test will install a different testing firmware, which overwrites the dualpanto framework firmware.
 
 This project is work-in-progress. Welcome to contribute.
 ### For BIS participants
 Please check [BIS.md](BIS.md) first.
 
 
-# Setup and Installing Firmware
+# Setup
 ## 1. Install the ESP32 driver (so your computer can communicate with the dualpanto)
 - [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) the latest installer for your OS-Version
 - Run the installer
@@ -56,7 +56,7 @@ you can also run all unittest from command line interface if struggle with setti
 
 You need to have the dualpanto connected to your computer to do this.
 
-1. open `config.py` and enter your COM port to connect dualpanto.
+1. open `config.py` and enter your COM port to connect dualpanto. How to find your COM port: **Windows** : go to device manager / geräte-manager → ports/anschüsse (COM & LPT) and check the com port. **Mac**: use command ls /dev/cu.* in the terminal and look for /dev/cu.usbserial-xxx
 2. In a terminal, navigate to the dualpanto-testing folder and run this command: `python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
 
 If all of this worked, you did successfully setup the Dualpanto. If not, see the next section.
