@@ -52,6 +52,9 @@ you can also run all unittest from command line interface if struggle with setti
 ## 5. Uploading the firmware to the Dualpanto
 
 You need to have the dualpanto connected to do this.
+
+In a terminal, navigate to the dualpanto-testing folder and run this command: 
+
 `python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
 
 You will repeat this step when...
