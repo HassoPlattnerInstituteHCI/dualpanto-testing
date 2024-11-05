@@ -48,7 +48,7 @@ you can also run all unittest from command line interface if struggle with setti
 ## 4. Install submodules (installs dependencies that are needed to run the tests)
 run `git submodule init`, then `git submodule update`
 
-# Test Flow
+# Running the tests
 Most of the test is not semi-automated since they are related to haptics and mechanical issue. Check `How to test?`.
 
 **When you need to ask question on discord, please tell us which test you failed, and describe error or issue you have precise as possible.**
