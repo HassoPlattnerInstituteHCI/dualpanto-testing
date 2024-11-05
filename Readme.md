@@ -57,7 +57,9 @@ In a terminal, navigate to the dualpanto-testing folder and run this command:
 
 `python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`
 
-You will repeat this step when...
+Now you are done with the setup.
+
+You will repeat this step later whenever...
 
 1. you update dualpanto framework (e.g. you tune PID)
 2. you plug dualpanto device into different PC
