@@ -42,6 +42,8 @@ if you chose PyCharm, you can run unittest from Markdown preview
 
 alternatively, you can still [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html#create-test)
 
+**Use the Terminal in PyCharm in further steps. Because only in the PyCharm terminal you will get your correct python virtual environment.**
+
 ### Alternative B: VScode (can work, but if you already configured your environment in a weird way it might be hard for us to debug)
 1. download [VScode](https://code.visualstudio.com/)
 2. install the Python extension for VSCode (https://marketplace.visualstudio.com/items?itemName=ms-python.python)
