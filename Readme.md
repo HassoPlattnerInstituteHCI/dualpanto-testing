@@ -33,7 +33,7 @@ We highly recommend to use PyCharm to run this test flow, but you can also use V
 ### Alternative A: PyCharm (recommended, because your environment is guaranteed to work)
 1. download [PyCharm](https://www.jetbrains.com/community/education/#students). As a student, you get a free license (click the "Apply now" button and complete the form).
 2. clone this repo and open it with pycharm
-3. [create vertial environment (we use python 3.7)](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html)and [install package using requirements.txt](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
+3. [create virtual environment (we use python 3.7)](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html) and [install packages using requirements.txt](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
 4. install [Mermaid](https://plugins.jetbrains.com/plugin/20146-mermaid) plugin for flowchart vis
 
 if you chose PyCharm, you can run unittest from Markdown preview 
