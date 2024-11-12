@@ -58,7 +58,7 @@ alternatively, you can still [execute unittest from scripts](https://www.jetbrai
 
 **How to make sure that you're actually in the Python Virtual Environment:** (do this after the initial install to check it worked, or if you reopen VSCode and you're not sure whether you're still in the venv, and especially if you have python errors, such as "No module named serial")
 
-If you run `pip list` in the terminal, it should show you (among others) `pyserial` and `platformio` in the list.
+-> Run `pip list` in the terminal, it should show you (among others) `pyserial` and `platformio` in the list.
 
 If they dont show up, press shift + command + P -> Python: Select Interpreter -> select the interpreter which includes venv, e.g. `Python 3.12.6 ('.venv': venv)`. Then open a new terminal. Then try again.
 If you don't see this interpreter, redo the installation steps above from step 4. Then open a new terminal. Then try again.
