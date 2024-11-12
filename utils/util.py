@@ -12,6 +12,9 @@ import numpy as np
 from time import sleep
 from collections import deque
 
+import config
+import configparser
+import os
 """ Lists serial port names
 
     :raises EnvironmentError:
@@ -20,6 +23,7 @@ from collections import deque
         A list of the serial ports available on the system
 """
 
+configparser = configparser.ConfigParser()
 
 def serial_ports():
     if sys.platform.startswith('win'):
@@ -51,6 +55,12 @@ def compile_firmware(firmware_directory="./firmware/00 template", cleanup=True):
 
 
 def upload_firmware(firmware_directory="./firmware/00 template", cleanup=True):
+    file_path = os.path.join(firmware_directory, 'platformio.ini')
+    print(file_path)
+    configparser.read(file_path)
+    configparser['env:esp32dev']['upload_port'] = config.COM_PORT
+    with open(file_path, 'w') as configfile:
+        configparser.write(configfile)
     res = subprocess.call('pio run', cwd=firmware_directory, shell=True)
     res += subprocess.call('pio run --target upload', cwd=firmware_directory, shell=True)
     if cleanup:
