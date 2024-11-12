@@ -55,7 +55,7 @@ alternatively, you can still [execute unittest from scripts](https://www.jetbrai
 7. select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
 8. it will install for a while (as shown by a message window on the bottom right). When it's done, **open a new terminal**.
 9. Check that it worked: Run `pip list` in the terminal, it should show you (among others) `pyserial` and `platformio` in the list.
-10. If they dont show up, or you get python errors such as "no module named serial": press shift + command + P -> Python: Select Interpreter -> select the interpreter which includes venv, e.g. `Python 3.12.6 ('.venv': venv)`. Then open a new terminal. Then try again. **You might have to redo step 10 every time you open VSCode.** If you don't see this interpreter in the list, redo the installation steps above from step 5.
+10. If they dont show up, or you get python errors later such as "no module named serial": press shift + command + P -> Python: Select Interpreter -> select the interpreter which includes venv, e.g. `Python 3.12.6 ('.venv': venv)`. Then open a new terminal. Then try again. **You might have to redo step 10 every time you open VSCode.** If you don't see this interpreter in the list, redo the installation steps above from step 5.
 
 ### Alternative C: Command Line (hard, because you get no help with setup from the IDE and do everything yourself from the terminal)
 you can also run all unittest from command line interface if struggle with setting up IDE. Install python library in requirements.txt, then execute script.
