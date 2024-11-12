@@ -76,9 +76,8 @@ You need to have the dualpanto connected to your computer to do this. Here is ho
 1. plug the USB-A end of the USB cable into your computer. If you don't have USB-A (e.g. new laptop), use a USB-C to USB-A adapter.
 2. plug the micro-USB-B end of the cable into the Dualpanto. The port is in the top left of the back of the device.
 3. Find out your COM port (the COM port is basically the name that your computer gave to the connection to the dualpanto). How to find your COM port: **Windows** : go to device manager / geräte-manager → ports/anschüsse (COM & LPT) and check the com port (e.g. "//.//COM3"). **Mac**: use command `ls /dev/cu.*` in the terminal and look for e.g. "/dev/cu.SLAB_USBtoUART"
-4. **On Windows, comment out line 38 in dualpanto-testing/firmware/dualpantoframework/firmware/platformio.ini**
-5. open `config.py` in the dualpanto-testing folder and put your COM port between the quotes in `COM_PORT = ""`. (@Shohei: is this the only file to be modified?)
-6. **Start pressing this button** on the back of the device (image below).
+4. open `config.py` in the dualpanto-testing folder and put your COM port between the quotes in `COM_PORT = ""`. (@Shohei: is this the only file to be modified?)
+5. **Start pressing this button** on the back of the device (image below).
 
 ![swith](./resources/dualpanto_switch.jpg)
 
