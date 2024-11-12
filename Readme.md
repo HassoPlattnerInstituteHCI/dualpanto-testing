@@ -51,7 +51,9 @@ alternatively, you can still [execute unittest from scripts](https://www.jetbrai
 1. download [VScode](https://code.visualstudio.com/)
 2. install the Python extension for VSCode (https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 3. clone this repo **(on Windows: dont clone into the WSL subsystem, it wont work!)** and open it with VScode
-4. shift + command + P -> >Python: Create Environment -> Venv -> select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
+4. shift + command + P -> >Python: Create Environment -> Venv
+5. On windows: if it says "No python installed", install python from the Microsoft Store (you can get there by clicking the "no python installed" warning). Then go back to VSCode and repeat from step 4.
+6. select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
 
 ### Alternative C: Command Line (hard, because you get no help with setup from the IDE and do everything yourself from the terminal)
 you can also run all unittest from command line interface if struggle with setting up IDE. Install python library in requirements.txt, then execute script.
