@@ -56,8 +56,7 @@ alternatively, you can still [execute unittest from scripts](https://www.jetbrai
 6. select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
 
 **After you did this: How to make sure that you're actually in the Python Virtual Environment:** (do this after the initial install to check it worked, or if you reopen VSCode and you're not sure whether you're still in the venv, and especially if you have python errors, such as "No module named serial")
-1. **Mac:** your default zsh/bash terminal should have (.venv) in front of each line.
-1. **Windows:** create a "Command Prompt" terminal in VSCode, it should have (.venv) in front of each line. (the default PowerShell terminal doesn't show you the (.venv)!)
+1. **Mac:** your default zsh/bash terminal should have (.venv) in front of each line. **Windows:** create a "Command Prompt" terminal in VSCode, it should have (.venv) in front of each line. (the default PowerShell terminal doesn't show you the (.venv)!)
 2. if you run `pip list` in the terminal, it should show you (among others) `pyserial` and `platformio` in the list.
 
 If any of those didnt work, press shift + command + P -> Python: Select Interpreter -> select the interpreter which includes venv, e.g. `Python 3.12.6 ('.venv': venv)`. Then try again.
