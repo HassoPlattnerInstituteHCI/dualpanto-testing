@@ -54,13 +54,14 @@ alternatively, you can still [execute unittest from scripts](https://www.jetbrai
 4. shift + command + P -> >Python: Create Environment -> Venv
 5. On windows: if it says "No python installed", install python from the Microsoft Store (you can get there by clicking the "no python installed" warning). Then go back to VSCode and repeat from step 4.
 6. select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
+7. it will install for a while (as shown by a message window on the bottom right). When it's done, open a new terminal. then do the "how to make sure..." step below.
 
-**After you did this: How to make sure that you're actually in the Python Virtual Environment:** (do this after the initial install to check it worked, or if you reopen VSCode and you're not sure whether you're still in the venv, and especially if you have python errors, such as "No module named serial")
-1. **Mac:** your default zsh/bash terminal should have (.venv) in front of each line. **Windows:** create a "Command Prompt" terminal in VSCode, it should have (.venv) in front of each line. (the default PowerShell terminal doesn't show you the (.venv)!)
-2. if you run `pip list` in the terminal, it should show you (among others) `pyserial` and `platformio` in the list.
+**How to make sure that you're actually in the Python Virtual Environment:** (do this after the initial install to check it worked, or if you reopen VSCode and you're not sure whether you're still in the venv, and especially if you have python errors, such as "No module named serial")
 
-If any of those didnt work, press shift + command + P -> Python: Select Interpreter -> select the interpreter which includes venv, e.g. `Python 3.12.6 ('.venv': venv)`. Then try again.
-If you don't see this interpreter, redo the installation steps above from step 4.
+**If you run `pip list` in the terminal, it should show you (among others) `pyserial` and `platformio` in the list.**
+
+If they dont show up, press shift + command + P -> Python: Select Interpreter -> select the interpreter which includes venv, e.g. `Python 3.12.6 ('.venv': venv)`. Then open a new terminal. Then try again.
+If you don't see this interpreter, redo the installation steps above from step 4. Then open a new terminal. Then try again.
 
 ### Alternative C: Command Line (hard, because you get no help with setup from the IDE and do everything yourself from the terminal)
 you can also run all unittest from command line interface if struggle with setting up IDE. Install python library in requirements.txt, then execute script.
