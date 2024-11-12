@@ -54,7 +54,7 @@ alternatively, you can still [execute unittest from scripts](https://www.jetbrai
 4. shift + command + P -> >Python: Create Environment -> Venv
 5. On windows: if it says "No python installed", install python from the Microsoft Store (you can get there by clicking the "no python installed" warning). Then go back to VSCode and repeat from step 4.
 6. select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
-7. it will install for a while (as shown by a message window on the bottom right). When it's done, open a new terminal. then do the "how to make sure..." step below.
+7. it will install for a while (as shown by a message window on the bottom right). When it's done, **open a new terminal**. then do the "how to make sure..." step below.
 
 **How to make sure that you're actually in the Python Virtual Environment:** (do this after the initial install to check it worked, or if you reopen VSCode and you're not sure whether you're still in the venv, and especially if you have python errors, such as "No module named serial")
 
