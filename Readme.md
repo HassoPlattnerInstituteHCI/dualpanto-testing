@@ -48,14 +48,15 @@ alternatively, you can still [execute unittest from scripts](https://www.jetbrai
 
 1. download [VScode](https://code.visualstudio.com/)
 2. install the Python extension for VSCode (https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-3. **On Windows**, use the PowerShell or Command Prompt terminal inside VSCode in all following steps. Don't use the WSL subsystem.
-4. clone this repo (**on Windows**: dont clone into the WSL subsystem, it wont work!) and open it with VScode
-5. shift + command + P -> >Python: Create Environment -> Venv
-6. **On windows:** if it says "No python installed", install python from the Microsoft Store (you can get there by clicking the "no python installed" warning). Then go back to VSCode and repeat from step 5.
-7. select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
-8. it will install for a while (as shown by a message window on the bottom right). When it's done, **open a new terminal**.
-9. Check that it worked: Run `pip list` in the terminal, it should show you (among others) `pyserial` and `platformio` in the list.
-10. If they dont show up, or you get python errors later such as "no module named serial": press shift + command + P -> Python: Select Interpreter -> select the interpreter which includes venv, e.g. `Python 3.12.6 ('.venv': venv)`. Then open a new terminal. Then try again. **You might have to redo step 10 every time you open VSCode.** If you don't see this interpreter in the list, redo the installation steps above from step 5.
+3. go into the extensions menu on the left -> press the settings gear on the Python extension -> select "Settings" -> type "terminal" into the search bar -> make sure that "Activate env in current terminal" and "Activate environment" are both checked. This will ensure that you are always in the correct environment.
+4. **On Windows**, use the PowerShell or Command Prompt terminal inside VSCode in all following steps. Don't use the WSL subsystem.
+5. clone this repo (**on Windows**: dont clone into the WSL subsystem, it wont work!) and open it with VScode
+6. shift + command + P -> >Python: Create Environment -> Venv
+7. **On windows:** if it says "No python installed", install python from the Microsoft Store (you can get there by clicking the "no python installed" warning). Then go back to VSCode and repeat from step 5.
+8. select your python version (e.g. Python 3.12.6) -> select requirements.txt -> confirm
+9. it will install for a while (as shown by a message window on the bottom right). When it's done, **open a new terminal**.
+10. Check that it worked: Run `pip list` in the terminal, it should show you (among others) `pyserial` and `platformio` in the list.
+11. If they dont show up, or you get python errors later such as "no module named serial": press shift + command + P -> Python: Select Interpreter -> select the interpreter which includes venv, e.g. `Python 3.12.6 ('.venv': venv)`. Then open a new terminal. Then try again. **You might have to redo step 10 every time you open VSCode.** If you don't see this interpreter in the list, redo the installation steps above from step 5.
 
 ### Alternative C: Command Line (hard, because you get no help with setup from the IDE and do everything yourself from the terminal)
 you can also run all unittest from command line interface if struggle with setting up IDE. Install python library in requirements.txt, then execute script.
