@@ -7,8 +7,7 @@ The purposes of this repository are
 
 This project is work-in-progress. Welcome to contribute.
 ### For BIS participants
-Please check [BIS.md](BIS.md) first.
-
+Please check [BIS.md](BIS.md) first. That file also contains instructions for the weekly assignments.
 
 # Setup
 ## 1. Install the ESP32 driver (so your computer can communicate with the dualpanto)
@@ -25,7 +24,7 @@ Please check [BIS.md](BIS.md) first.
  - Run `sudo xcode-select -s /Applications/Xcode.app/Contents/Developer`
 
 ### windows
- - Install Visual Studio 2019 or 2017 (you won't use this as your IDE, this is just to install the C++ dependency in the next step)
+ - Install [Visual Studio](https://visualstudio.microsoft.com/de/vs/older-downloads/) 2019 or 2017 (you won't use this as your IDE, this is just to install the C++ dependency in the next step)
  - Select at least the workload “Desktopentwicklung mit C++”
 
 ## 3. Install IDE (this is where you will run the Dualpanto tests)
@@ -33,16 +32,17 @@ We highly recommend to use PyCharm to run this test flow, but you can also use V
 ### Alternative A: PyCharm (recommended, because your environment is guaranteed to work)
 1. download [PyCharm](https://www.jetbrains.com/community/education/#students). As a student, you get a free license (click the "Apply now" button and complete the form).
 2. clone this repo **(on Windows: dont clone into the WSL subsystem, it wont work!)** and open it with pycharm
-3. [create virtual environment (we use python 3.7)](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html) and [install packages using requirements.txt](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
-4. install [Mermaid](https://plugins.jetbrains.com/plugin/20146-mermaid) plugin for flowchart vis
+3. [create virtual environment (we use python 3.7)](https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html)
+4. [install packages using requirements.txt]([https://www.jetbrains.com/help/pycharm/managing-dependencies.html](https://www.jetbrains.com/help/pycharm/managing-dependencies.html#apply_dependencies))
+5. Install the Mermaid diagramming plugin for PyCharm through PyCharm->Settings->Plugins->Marketplace (search for "Mermaid") or download it here: [Mermaid](https://plugins.jetbrains.com/plugin/20146-mermaid)
 
-if you chose PyCharm, you can run unittest from Markdown preview 
+In PyCharm, you can run the unittests by clicking on them in the Markdown preview of this `readme`
 
 <img src="/resources/execute.jpg" width="50%" />
 
 alternatively, you can still [execute unittest from scripts](https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html#create-test)
 
-**Use the Terminal in PyCharm in further steps. Because only in the PyCharm terminal you will get your correct python virtual environment.**
+**If you need a Terminal in further steps, use the one built into PyCharm. Only in the PyCharm terminal you will get your correct python virtual environment.**
 
 ### Alternative B: VScode (can work, but if you already configured your environment in a weird way it might be hard for us to debug)
 
@@ -77,8 +77,8 @@ You need to have the dualpanto connected to your computer to do this. Here is ho
 
 ![swith](./resources/dualpanto_switch.jpg)
 
-7. In the terminal of your IDE (either PyCharm or VSCode with Python virtual environment), navigate to the dualpanto-testing folder and run this command: `python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`. **Keep pressing the button** while this is running.
-8. After the install is finished (terminal says OK), you can **release the button**.
+6. In the terminal of your IDE (either PyCharm or VSCode with Python virtual environment), navigate to the dualpanto-testing folder and run this command: `python -m unittest test_firmware.UploadDualPantoFramework.test_upload_dp_firmware`. **Keep pressing the button** while this is running.
+7. After the install is finished (terminal says OK), you can **release the button**.
 
 If all of this worked, you did successfully setup the Dualpanto. If not, see the next section.
 
@@ -98,11 +98,11 @@ Most of the test is not semi-automated since they are related to haptics and mec
 **When you need to ask question on discord, please tell us which test you failed, and describe error or issue you have precise as possible.**
 
 ## Configurate test flow
-2. All test upload a firmware for each unit-test. You probably need to push button back of dualpantowhen you upload a firmware (it depends on OS).
+1. All tests upload a specific firmware for each unit-test. You probably need to push this button on the back of dualpanto when you upload a firmware (it depends on OS).
 ![swith](./resources/dualpanto_switch.jpg)
    
 ## 1. Mechanical and Hardware
-(For BIS studetns: There are code to figure out whether encoder and motor works, but no good evaluation process yet. We will update asap. You can also modify code to test your purpose.)
+(For BIS students: There is code available to figure out whether encoders and motors work, but no good evaluation process yet. We will update asap. You can also modify code to test your purpose.)
 
 0.  [check mechanical configuration](physical_test/checklist.md)
 1. `python -m unittest test_firmware.Basic`
