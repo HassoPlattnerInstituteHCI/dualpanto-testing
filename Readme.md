@@ -5,7 +5,10 @@ The purposes of this repository are
 1. to install the dualpanto framework firmware to the dualpanto devices, which is needed for running & developing apps/games (follow the setup section. the actual firmware installation is in step 5)
 2. to provide semi-automatic testing for the dualpanto device. This involves basic functionality checks of the hardware, the haptic rendering, communication protocol and the unity integration. A test will install a different testing firmware, which overwrites the dualpanto framework firmware. (follow "If something doesn't work, run these tests")
 
-This project is work-in-progress. Welcome to contribute.
+The `readme` is therefore divided into two sections. If you have already set up your dualpanto, you can [skip to testing](#when-something-doesnt-work:-troubleshooting-with-tests).
+
+#### This project is work-in-progress. You are welcome to contribute.
+
 ### For BIS participants
 Please check [BIS.md](BIS.md) first. That file also contains instructions for the weekly assignments.
 
@@ -23,7 +26,7 @@ Please check [BIS.md](BIS.md) first. That file also contains instructions for th
  - Run `xcode-select –install` to install the compilers
  - Run `sudo xcode-select -s /Applications/Xcode.app/Contents/Developer`
 
-### windows
+### Windows
  - Install [Visual Studio](https://visualstudio.microsoft.com/de/vs/older-downloads/) 2019 or 2017 (you won't use this as your IDE, this is just to install the C++ dependency in the next step)
  - Select at least the workload “Desktopentwicklung mit C++”
 
@@ -82,26 +85,25 @@ You need to have the dualpanto connected to your computer to do this. Here is ho
 
 If all of this worked, you did successfully setup the Dualpanto. If not, see the next section.
 
-# If something doesn't work, run these tests
+# When something doesnt work: Troubleshooting with Tests
 
-## Whenever you plug Dualpanto into a new PC do this:
+## Step 0: Whenever you plug Dualpanto into a new PC, reinstall the firmware
 
-Repeat step 5 (uploading the firmware).
+Check step 5 on how to do so.
 
-known issues when you plug dualpanto device into different PC:
-    - we observe dualpanto has some wall rendering issue when you connect dualpanto to other PC. e.g, you uplaod firmware from mac and connect to windows pc.
-    - this is not always happend. but You need to keep this in mind.
-    - We haven't known why so. Welcome you to contribute here!
-    
-Most of the test is not semi-automated since they are related to haptics and mechanical issue. Check `How to test?`.
+Known issues when you plug dualpanto device into different PC:
+- we observe dualpanto has some wall rendering issue when you connect dualpanto to other PC. e.g, you uplaod firmware from mac and connect to windows pc.
+- this doesn't happen always. but You need to keep this in mind.
+- We haven't known why so. Welcome you to contribute here!
 
-**When you need to ask question on discord, please tell us which test you failed, and describe error or issue you have precise as possible.**
-
-## Configurate test flow
-1. All tests upload a specific firmware for each unit-test. You probably need to push this button on the back of dualpanto when you upload a firmware (it depends on OS).
+## Running the Tests
+- **When you need to ask question on discord, please tell us which test you failed, and describe error or issue you have precise as possible.**
+- You can either run the following commands in a console, or in PyCharm view this `readme` in formatted markdown and click on them directly
+- Most of the test require user input and are not semi-automated, since they are related to haptics and mechanical issues. Check `How to test?`.
+- All tests upload a specific firmware for each unit-test. You probably need to push this button on the back of dualpanto when you upload a firmware (it depends on OS).
 ![swith](./resources/dualpanto_switch.jpg)
    
-## 1. Mechanical and Hardware
+###  Category 1: Mechanical and Hardware Tests
 (For BIS students: There is code available to figure out whether encoders and motors work, but no good evaluation process yet. We will update asap. You can also modify code to test your purpose.)
 
 0.  [check mechanical configuration](physical_test/checklist.md)
@@ -111,11 +113,12 @@ Most of the test is not semi-automated since they are related to haptics and mec
 4. `python -m unittest test_hardware.EndEffector.test_encoder` **WIP**
 5. `python -m unittest test_hardware.EndEffector.test_motor` **WIP**
 
-- *1.Basic* check whether you could compile firmware and upload firmaere with platfiormIO
-- *2.Linkage.test_encoder* check the four encoders on top of big motors works fine
-- *3.Linkage.test_sync* check the four big motors works fine
-- *4.EndEffector.test_encoder* check the two encoders on end effectors works fine
-- *5.EndEffector.test_sync* check the two motors on end effectors works fine
+Explanations:
+- *1. Basic*: Check whether you could compile firmware and upload it with platfiormIO
+- *2. Linkage.test_encoder*: Check if the four encoders on top of big motors are working fine
+- *3. Linkage.test_sync*: Check if the four big motors are working fine
+- *4. EndEffector.test_encoder*: Check if the two encoders on end effectors are working fine
+- *5. EndEffector.test_sync*: Check if the two motors on end effectors are working fine
 
 ```mermaid
 %%{init: {'theme': 'neutral' } }%%
@@ -160,7 +163,7 @@ flowchart TD;
     click MC "https://discord.com"
 ```
 
-## 2. Rendering Haptics = DualPanto Firmware
+### Category 2: Tests for Rendering Haptics = DualPanto Firmware
 
 0. [check mechanical configuration](physical_test/checklist.md)
 1. `python -m unittest test_firmware.Haptics.test_line_wall` **WIP**
@@ -171,15 +174,16 @@ flowchart TD;
 6. `python -m unittest test_firmware.Haptics.test_diamond_obstacle` **WIP**
 7. `python -m unittest test_firmware.Haptics.test_moving_obstacle` **WIP**
 
-- *1.Haptics.test_line_wall* check dualpanto firmware can render simplest wall = line or not
-- *2.Kinematics.test_kiematics_sync* check forward and inverse kinematics of dualpanto firmware works fine or not
+Explanations:
+- *1. Haptics.test_line_wall*: Check dualpanto firmware can render simplest wall = line or not
+- *2. Kinematics.test_kiematics_sync*: Check forward and inverse kinematics of dualpanto firmware works fine or not
 
 
-## 3. Communication Protocol
+### Category 3: Communication Protocol Tests
 
 **WIP**
 
-## 4. Unity
+### Category 4: Unity Tests
 
 **WIP**
 
