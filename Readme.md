@@ -5,7 +5,7 @@ The purposes of this repository are
 1. to install the dualpanto framework firmware to the dualpanto devices, which is needed for running & developing apps/games (follow the setup section. the actual firmware installation is in step 5)
 2. to provide semi-automatic testing for the dualpanto device. This involves basic functionality checks of the hardware, the haptic rendering, communication protocol and the unity integration. A test will install a different testing firmware, which overwrites the dualpanto framework firmware. (follow "If something doesn't work, run these tests")
 
-The `readme` is therefore divided into two sections. If you have already set up your dualpanto, you can [skip to testing](#when-something-doesnt-work:-troubleshooting-with-tests).
+The `readme` is therefore divided into two sections. If you have already set up your dualpanto, you can [skip to testing](#when-something-doesnt-work-troubleshooting-with-tests).
 
 #### This project is work-in-progress. You are welcome to contribute.
 
@@ -85,7 +85,7 @@ You need to have the dualpanto connected to your computer to do this. Here is ho
 
 If all of this worked, you did successfully setup the Dualpanto. If not, see the next section.
 
-# When something doesnt work: Troubleshooting with Tests
+# When something doesn't work: Troubleshooting with Tests
 
 ## Step 0: Whenever you plug Dualpanto into a new PC, reinstall the firmware
 
