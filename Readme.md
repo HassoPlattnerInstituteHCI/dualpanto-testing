@@ -4,8 +4,9 @@ The purposes of this repository are
 
 1. to install the dualpanto framework firmware to the dualpanto devices, which is needed for running & developing apps/games (follow the setup section. the actual firmware installation is in step 5)
 2. to provide semi-automatic testing for the dualpanto device. This involves basic functionality checks of the hardware, the haptic rendering, communication protocol and the unity integration. A test will install a different testing firmware, which overwrites the dualpanto framework firmware. (follow "If something doesn't work, run these tests")
+3. to provide tasks for weekly assignments in [BIS.md](BIS.md)
 
-The `readme` is therefore divided into two sections. If you have already set up your dualpanto, you can [skip to testing](#when-something-doesnt-work-troubleshooting-with-tests).
+The `readme.md` is therefore divided into the sections Setup and Testing. If you have already set up your dualpanto, you can [skip to testing](#when-something-doesnt-work-troubleshooting-with-tests).
 
 #### This project is work-in-progress. You are welcome to contribute.
 
@@ -39,7 +40,7 @@ We highly recommend to use PyCharm to run this test flow, but you can also use V
 4. [install packages using requirements.txt]([https://www.jetbrains.com/help/pycharm/managing-dependencies.html](https://www.jetbrains.com/help/pycharm/managing-dependencies.html#apply_dependencies))
 5. Install the Mermaid diagramming plugin for PyCharm through PyCharm->Settings->Plugins->Marketplace (search for "Mermaid") or download it here: [Mermaid](https://plugins.jetbrains.com/plugin/20146-mermaid)
 
-In PyCharm, you can run the unittests by clicking on them in the Markdown preview of this `readme`
+In PyCharm, you can run the unittests by clicking on them in the Markdown preview of this `readme.md`
 
 <img src="/resources/execute.jpg" width="50%" />
 
@@ -98,7 +99,7 @@ Known issues when you plug dualpanto device into different PC:
 
 ## Running the Tests
 - **When you need to ask question on discord, please tell us which test you failed, and describe error or issue you have precise as possible.**
-- You can either run the following commands in a console, or in PyCharm view this `readme` in formatted markdown and click on them directly
+- You can either run the following commands in a console, or in PyCharm view this `readme.md` in formatted markdown and click on them directly
 - Most of the test require user input and are not semi-automated, since they are related to haptics and mechanical issues. Check `How to test?`.
 - All tests upload a specific firmware for each unit-test. You probably need to push this button on the back of dualpanto when you upload a firmware (it depends on OS).
 ![swith](./resources/dualpanto_switch.jpg)
