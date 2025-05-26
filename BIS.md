@@ -2,8 +2,8 @@
 
 This dualpanto-testing repo is used for the first few weekly assignments, and generally for uploading firmware to dualpanto.
 
-If you have issue about installing all requirements and this testing tool, **please first ask on discord #general channel.**
-Often other students have already solved issue you have. (with 60 students in 2024, there's a good chance they have solved it)
+If you have issue about installing all requirements and this testing tool, **please first ask on Moodle.**
+Often other students have already solved issue you have. 
 
 
 ## Requirements
