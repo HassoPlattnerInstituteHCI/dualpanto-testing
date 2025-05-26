@@ -39,7 +39,7 @@ If you properly code it, you will find a thin wall in the midle of dualpanto int
 5. take the video that you interacts with rendered wall
 6. and upload to dokuwiki project page
 
-## Assignment Week8: 
+## Assignment Week10: 
 1. upload the original firmware to your DualPanto, for this
    - checkout feature/encoder-driver branch
    - you want to have all submodules cloned (run `git submodule init`, then `git submodule update`)
