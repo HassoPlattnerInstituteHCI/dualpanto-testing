@@ -18,7 +18,7 @@ Please check [BIS.md](BIS.md) first. That file also contains instructions for th
 - [Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) the latest installer of the driver for your OS-Version
 - Unzip and run the installer
   * Tips for windows: download "CP210x Universal Windows Driver," right-click on the silabser.inf file, and select _Install_
-  * Tips for mac: mount the DMG file and double-click on the	Silicon Labs VCP Driver. If the installation is blocked, go to the _System Preferences Security & Privacy_ pane to	unblock the system extension
+  * Tips for mac: mount the DMG file and double-click on the	Silicon Labs VCP Driver. If the installation is blocked or won't finish, go to the _System Preferences Security & Privacy_ pane (before Tahoe) or _Login Items & Extensions_ (since Tahoe) to	allow the system extension
 
 ## 2. Setup C++ environment (so that C++ code of this repo can be compiled)
 
