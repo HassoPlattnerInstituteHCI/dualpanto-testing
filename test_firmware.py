@@ -107,4 +107,7 @@ class UploadDualPantoFramework(unittest.TestCase):
     def test_upload_dp_firmware(self):
         res = util.upload_firmware('./firmware/dualpantoframework/firmware')
         self.assertEqual(res, 0, msg='failed to compile firmware. please first check platformIO config and installation')
+    def perform_calibration(self):
+        res = util.upload_firmware('./firmware/dualpantoframework/calibrationFirmware')
+        self.assertEqual(res, 0, msg='failed to compile calibration firmware. please first check platformIO config and installation')
 
