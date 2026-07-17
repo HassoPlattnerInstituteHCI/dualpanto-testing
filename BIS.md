@@ -46,6 +46,25 @@ If you properly code it, you will find a thin wall in the midle of dualpanto int
 5. run dualdraw and draw a nice picture (see readme.md for instructions)
 6. upload a video of your drawing to dokuwiki
 
+## Claibrating Firmware
+
+### Calibration (Instructions)
+Before uploading the regular firmware to the device, we can upload `calibrationFirmware` to store some calibration information permanently to the device. For this, bring the handles to the closed position (as far back as possible), and rotate the end effectors into a distinct/memorable position, e.g. facing **precisely** towards you.
+
+1. **Absolute encoders** The linkage encoders (on the big motors) have absolute positioning. When flashing the `calibrationFirmware`, the encoder values are immediately read and permanently stored to non-volatile storage. The device now remembers this position as the closed position. This means that from now on, the handles can be in any position on devive startup, and tracking still works. If no calibration data is present, the regular firmware expects the handles to be in closed position on every start.
+2. **Determine the end effector gear ratios**
+Unfortunately, there are at least four different end effector gear boxes in circulation at the moment. The `calibrationFirmware` can distinguish between them, and permanently save their type to non-volatile storage. For this, some human input is needed.
+For each end effector:
+- Rotate the end effector **three times** clockwise (looking from the top). Try to be very precise! Since the difference between gear ratios is rather small, precision is key here. Since the linkage calibration is already done, you can pull the handles out a bit for easier rotation.
+- Rotate the end effector counterclockwise for about half a revolution. This signals to the firmware that the calibration is done.
+
+Uploading calibration firmware:
+`python -m unittest test_firmware.UploadDualPantoFramework.perform_calibration`
+
+*Remember: The end effector encoders are relative, meaning they still need to be in a known position on startup to register correctly. However, this calibration ensures that the handle rotation has the correct speed.*
+
+When you have finished the calibration, proceed to uploading the regular `firmware`.
+
 ## Uploading DualpantoFramework
 From Week9, we will develop dualpanto app. sometimes you want to upload dualpanto famework again and again when...
 
